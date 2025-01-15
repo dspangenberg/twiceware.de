@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/src/components/Logo.astro" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/bluesky-duotone-rounded.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/bluesky-duotone-rounded.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/github-duotone-rounded.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/github-duotone-rounded.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/privacy.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/legal/privacy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/legal/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/legal/[...slug].astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

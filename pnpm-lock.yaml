@@ -29,6 +29,9 @@ importers:
       '@fontsource/clear-sans':
         specifier: ^5.1.0
         version: 5.1.0
+      '@hugeicons/react':
+        specifier: 0.8.0-beta.1
+        version: 0.8.0-beta.1(react@19.0.0)
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -413,6 +416,14 @@ packages:
 
   '@fontsource/clear-sans@5.1.0':
     resolution: {integrity: sha512-eBfvK1VrPbe+yFLdvMFF8TUji/VJfW+2uG2B6KQax6pRWfNpTign+iS+4r8Aa+7MzvqduYcEXfq5RgeR/pcEJA==}
+
+  '@hugeicons/core@1.2.0':
+    resolution: {integrity: sha512-2O7U0uPht4xaBDAVPUSSCLjDP+rUgLPEoW7vdl2VczaeNrOBf49oHhkKLCHKT1/jaVWyf1L+y9Z+KzOSWVXAfw==}
+
+  '@hugeicons/react@0.8.0-beta.1':
+    resolution: {integrity: sha512-qaBcMrD7e/intZx7IF0TmbV0LIaWUTj7rmhVZfXuavoLAW+WLiUDsi+5wWW0Bss5o5xHIHMFvX8Bw04F+fWmZA==}
+    peerDependencies:
+      react: '>=16.0.0'
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -3043,6 +3054,13 @@ snapshots:
     optional: true
 
   '@fontsource/clear-sans@5.1.0': {}
+
+  '@hugeicons/core@1.2.0': {}
+
+  '@hugeicons/react@0.8.0-beta.1(react@19.0.0)':
+    dependencies:
+      '@hugeicons/core': 1.2.0
+      react: 19.0.0
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
