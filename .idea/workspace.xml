@@ -20,7 +20,7 @@
       <change beforePath="$PROJECT_DIR$/src/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/legal/imprint.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/legal/privacy.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/legal/privacy.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/privacy.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/legal/privacy.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
