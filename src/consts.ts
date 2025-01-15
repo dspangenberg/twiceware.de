@@ -37,6 +37,7 @@ export const LINKS: Links = [
     TEXT: "Startseite",
     HREF: "/", 
   },
+    /*
   { 
     TEXT: "Arbeit",
     HREF: "/work", 
@@ -49,6 +50,8 @@ export const LINKS: Links = [
     TEXT: "Projekte",
     HREF: "/projects", 
   },
+
+     */
 ]
 
 // Socials
