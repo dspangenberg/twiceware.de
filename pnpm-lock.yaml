@@ -32,6 +32,15 @@ importers:
       '@hugeicons/react':
         specifier: 0.8.0-beta.1
         version: 0.8.0-beta.1(react@19.0.0)
+      '@tabler/icons':
+        specifier: ^3.28.1
+        version: 3.28.1
+      '@tabler/icons-react':
+        specifier: ^3.28.1
+        version: 3.28.1(react@19.0.0)
+      '@tabler/icons-sprite':
+        specifier: ^3.28.1
+        version: 3.28.1
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -44,9 +53,15 @@ importers:
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
+      install:
+        specifier: ^0.13.0
+        version: 0.13.0
       obfuscate-link-web-component:
         specifier: ^0.0.7
         version: 0.0.7
+      pnpm:
+        specifier: ^9.15.4
+        version: 9.15.4
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -714,6 +729,17 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
+  '@tabler/icons-react@3.28.1':
+    resolution: {integrity: sha512-KNBpA2kbxr3/2YK5swt7b/kd/xpDP1FHYZCxDFIw54tX8slELRFEf95VMxsccQHZeIcUbdoojmUUuYSbt/sM5Q==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons-sprite@3.28.1':
+    resolution: {integrity: sha512-h7JYUK+LuQx/m6JUjME5KJ8I0q20VprtO6OlYw8i+YP/57QcnRBpOakkjVsb6vPEUyUMp1nhyE+dHx9Z0M3I8g==}
+
+  '@tabler/icons@3.28.1':
+    resolution: {integrity: sha512-h7nqKEvFooLtFxhMOC1/2eiV+KRXhBUuDUUJrJlt6Ft6tuMw2eU/9GLQgrTk41DNmIEzp/LI83K9J9UUU8YBYQ==}
+
   '@tailwindcss/typography@0.5.16':
     resolution: {integrity: sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==}
     peerDependencies:
@@ -1348,6 +1374,10 @@ packages:
   inline-style-parser@0.2.2:
     resolution: {integrity: sha512-EcKzdTHVe8wFVOGEYXiW9WmJXPjqi1T+234YpJr98RiFYKHV3cdy1+3mkTE+KHTHxFFLH51SfaGOoUdW+v7ViQ==}
 
+  install@0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
+
   is-alphabetical@2.0.1:
     resolution: {integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==}
 
@@ -1891,6 +1921,11 @@ packages:
   pkg-dir@4.2.0:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
+
+  pnpm@9.15.4:
+    resolution: {integrity: sha512-stwg4vxys+GISEWbNzWaMgZGY+VielHkx0ssKd2OjgSRSDw6u0B4nP1Xi/Ni+2uoJhsF8Dh9dnku1uI+o7G2oA==}
+    engines: {node: '>=18.12'}
+    hasBin: true
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -3329,6 +3364,17 @@ snapshots:
 
   '@stencil/core@4.23.2': {}
 
+  '@tabler/icons-react@3.28.1(react@19.0.0)':
+    dependencies:
+      '@tabler/icons': 3.28.1
+      react: 19.0.0
+
+  '@tabler/icons-sprite@3.28.1':
+    dependencies:
+      '@tabler/icons': 3.28.1
+
+  '@tabler/icons@3.28.1': {}
+
   '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17)':
     dependencies:
       lodash.castarray: 4.4.0
@@ -4149,6 +4195,8 @@ snapshots:
 
   inline-style-parser@0.2.2: {}
 
+  install@0.13.0: {}
+
   is-alphabetical@2.0.1: {}
 
   is-alphanumerical@2.0.1:
@@ -4932,6 +4980,8 @@ snapshots:
   pkg-dir@4.2.0:
     dependencies:
       find-up: 4.1.0
+
+  pnpm@9.15.4: {}
 
   postcss-import@15.1.0(postcss@8.5.1):
     dependencies:

@@ -18,30 +18,61 @@ const projects = (await getCollection("projects"))
   .slice(0,3)
 
 const stack = [
+  {
+    text: "AdonisJS",
+    icon: "tabler-brand-adonis-js",
+    href: "https://tailwindcss.com"
+  },
   { 
     text: "Astro", 
-    icon: "astro", 
+    icon: "tabler-brand-astro",
     href: "https://astro.build" 
   },
   { 
     text: "Javascript", 
-    icon: "javascript", 
+    icon: "tabler-brand-javascript",
     href: "https://www.javascript.com" 
   },
-  { 
-    text: "Typescript", 
-    icon: "typescript", 
-    href: "https://www.typescriptlang.org" 
+  {
+    text: "Laravel",
+    icon: "tabler-brand-laravel",
+    href: "https://tailwindcss.com"
   },
+  {
+    text: "PHP",
+    icon: "tabler-brand-php",
+    href: "https://tailwindcss.com"
+  },
+  {
+    text: "ReactJS",
+    icon: "tabler-brand-react",
+    href: "https://tailwindcss.com"
+  },,
   { 
-    text: "Tailwind", 
-    icon: "tailwind", 
+    text: "tailwindcss",
+    icon: "tabler-brand-tailwind",
     href: "https://tailwindcss.com" 
+  },
+  {
+    text: "Typescript",
+    icon: "tabler-brand-typescript",
+    href: "https://www.typescriptlang.org"
+  }
+  ,
+  {
+    text: "Vue.js",
+    icon: "tabler-brand-vue",
+    href: "https://tailwindcss.com"
+  },,
+  {
+    text: "WordPress",
+    icon: "tabler-brand-wordpress",
+    href: "https://tailwindcss.com"
   },
 ]
 ---
 
-<PageLayout title="Home" description={SITE.DESCRIPTION}>
+<PageLayout title="Startseite" description={SITE.DESCRIPTION}>
 
   <!-- Light Mode: Particles -->
   <div class='absolute inset-0 block dark:hidden'>
@@ -90,8 +121,9 @@ const stack = [
   <div class="relative bg-white dark:bg-black">
     <div class="mx-auto max-w-screen-sm p-5  pb-16">
 
+
       <!-- About Section -->
-      <section class="animate">
+      <section class="animate hidden">
         <article>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
         </article>
@@ -126,25 +158,17 @@ const stack = [
 
       <section class="animate">
         <div class="space-y-4">
-          <p class="font-semibold text-black dark:text-white">
-            Website build with
+          <p class="font-semibold text-black dark:text-white text-center">
+            Wir sprechen und nutzen
           </p>
-          <div class="flex flex-wrap items-center gap-2 mt-5">
+          <div class="flex flex-wrap items-center gap-2 mt-5 grid grid-cols-2 lg:grid-cols-5">
             {stack.map(item => (
               <StackCard 
-                text={item.text}
-                icon={item.icon}
-                href={item.href}
+                text={item?.text || ''}
+                icon={item?.icon || ''}
+                href={item?.href || ''}
               />
             ))}
-          </div>
-          <div>
-            Performing reactivity and statefulness, special guest
-            <a href="https://www.solidjs.com/" target="_blank" class="w-fit group underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                SolidJS
-              </span>
-            </a>
           </div>
         </div>
       </section>
