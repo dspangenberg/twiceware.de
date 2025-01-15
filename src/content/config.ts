@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content"
+import { glob } from 'astro/loaders';
 
 const work = defineCollection({
   type: "content",
@@ -9,6 +10,7 @@ const work = defineCollection({
     dateEnd: z.union([z.coerce.date(), z.string()]),
   }),
 })
+
 
 const blog = defineCollection({
   type: "content",
@@ -35,10 +37,10 @@ const projects = defineCollection({
 })
 
 const legal = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/legal" }),
   schema: z.object({
     title: z.string(),
-    date: z.coerce.date(),
+    date: z.coerce.date().optional(),
   }),
 })
 
