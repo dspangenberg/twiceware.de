@@ -1,5 +1,4 @@
 ---
-import { SITE, SOCIALS } from "@consts"
 import Container from "@components/Container.astro"
 import BlueSkyLogo from '@/components/bluesky-duotone-rounded'
 ---
@@ -57,22 +56,7 @@ import BlueSkyLogo from '@/components/bluesky-duotone-rounded'
           <div class="order-1 sm:order-2 flex justify-center sm:justify-end">
             <div class="flex flex-wrap gap-1 items-center justify-center">
               <BlueSkyLogo />
-              {
-                SOCIALS.map((SOCIAL) => (
-                  <a 
-                    href={SOCIAL.HREF} 
-                    target="_blank" 
-                    aria-label={`${SITE.TITLE} on ${SOCIAL.NAME}`} 
-                    class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
-                  >
-                    <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend width="24" height="24" color="#9b9b9b" fill="none">
-                      <use href={`/social.svg#${SOCIAL.ICON}`} />
-                    </svg>
-                  </a>
-
-                ))
-              }
-              </div>
+            </div>
           </div>
         </div>
       </Container>

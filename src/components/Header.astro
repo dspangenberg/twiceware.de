@@ -1,14 +1,15 @@
 ---
-import { SITE, LINKS } from "@consts"
+import { LINKS } from "@consts"
 import { cn } from "@lib/utils"
-const { pathname } = Astro.url
-const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
 import '@fontsource/clear-sans/100.css';
 import '@fontsource/clear-sans/300.css';
 import '@fontsource/clear-sans/400.css';
 import '@fontsource/clear-sans/500.css';
 import '@fontsource/clear-sans/700.css';
+
+const { pathname } = Astro.url
+const subpath = pathname.match(/[^/]+/g)
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 ">
