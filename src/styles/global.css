@@ -45,7 +45,7 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  @apply bg-white/75 dark:bg-black/50;
+  @apply bg-white/95 dark:bg-black/50;
   @apply border-black/10 dark:border-white/25;
   @apply backdrop-blur-sm saturate-200;
 }
