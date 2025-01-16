@@ -12,12 +12,12 @@ const { pathname } = Astro.url
 const subpath = pathname.match(/[^/]+/g)
 ---
 
-<header id="header" class="fixed top-0 w-full h-24 z-50 bg-white">
+<header id="header" class="fixed top-0 w-full h-24 z-50 bg-white dark:bg-white">
   <Container size="md">
     <div class="relative h-full w-full ">
       <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold text-center w-full">
         <a href="/" class="mx-auto flex gap-1  w-auto items-center text-center justify-center text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-          <img src="/tw-bild-wort.png" class="h-10" alt="twiceware solutions e. K. - Logo"/>
+          <img src="/tw-bild-wort.png" class="h-14 dark:bg-white p-2 dark:border-white" alt="twiceware solutions e. K. - Logo"/>
         </a>
       </div>
 
@@ -33,7 +33,7 @@ const subpath = pathname.match(/[^/]+/g)
       </nav>
     </div>
 
-    <div class="buttons absolute right-0 -translate-y-1/2 flex gap-1">
+    <div class="buttons absolute right-0 -translate-y-1/2 flex gap-1 mt-12">
       <!--
       <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", pathname === "/search" || "/" + subpath?.[0] === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
         <svg class="size-full">
@@ -47,6 +47,7 @@ const subpath = pathname.match(/[^/]+/g)
           <use href="/ui.svg#rss"></use>
         </svg>
       </a>
+      -->
 
       <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg class="size-full block dark:hidden">
@@ -56,6 +57,8 @@ const subpath = pathname.match(/[^/]+/g)
           <use href="/ui.svg#moon"></use>
         </svg>
       </button>
+
+      <!--
 
       <button id="header-drawer-button" aria-label={`Toggle drawer open and closed`} class={cn("flex md:hidden", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg id="drawer-open" class="size-full">
