@@ -7,7 +7,7 @@ import { SITE } from "@consts"
 
 // Create the static pages for legal docs
 export async function getStaticPaths() {
-	const docs = await getCollection("legal")
+	const docs = await getCollection("rechtliches")
 	return docs.map((doc) => ({
 		params: { slug: doc.slug },
 		props: doc,
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 // Get the requested legal doc
-type Props = CollectionEntry<"legal">;
+type Props = CollectionEntry<"rechtliches">;
 const doc = Astro.props
 const { title } = doc.data
 const { Content } = await doc.render();

@@ -8,7 +8,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Footer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/imprint.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/privacy.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/terms.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projects/project-1/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projects/project-2/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projects/project-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projects/project-4/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/apple.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/facebook.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/google.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/work/mcdonalds.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/legal/[...slug].astro" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +98,7 @@
       <workItem from="1736979343347" duration="1750000" />
       <workItem from="1737025312787" duration="1843000" />
       <workItem from="1737027174846" duration="4094000" />
-      <workItem from="1737035189242" duration="5575000" />
+      <workItem from="1737035189242" duration="10586000" />
     </task>
     <servers />
   </component>

@@ -36,12 +36,12 @@ const projects = defineCollection({
   }),
 })
 
-const legal = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/legal" }),
+const rechtliches = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/rechtliches" }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date().optional(),
   }),
 })
 
-export const collections = { work, blog, projects, legal }
+export const collections = { work, blog, projects, rechtliches }
