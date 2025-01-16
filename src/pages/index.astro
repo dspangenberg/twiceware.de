@@ -8,14 +8,14 @@ import TwinklingStars from "@components/TwinklingStars.astro"
 import MeteorShower from "@components/MeteorShower.astro"
 
 const posts = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .slice(0,3)
 
 const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+    .filter(project => !project.data.draft)
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .slice(0,3)
 
 const stack = [
   {
@@ -23,10 +23,10 @@ const stack = [
     icon: "tabler-brand-adonis-js",
     href: "https://adonisjs.com"
   },
-  { 
-    text: "Astro", 
+  {
+    text: "Astro",
     icon: "tabler-brand-astro",
-    href: "https://astro.build" 
+    href: "https://astro.build"
   },
   {
     text: "Laravel",
@@ -48,10 +48,10 @@ const stack = [
     icon: "tabler-brand-react",
     href: "https://react.dev"
   },,
-  { 
+  {
     text: "tailwindcss",
     icon: "tabler-brand-tailwind",
-    href: "https://tailwindcss.com" 
+    href: "https://tailwindcss.com"
   },
   {
     text: "TypeScript",
@@ -82,29 +82,34 @@ const stack = [
   </div>
 
   <!-- Dark Theme: Stars -->
-  <div class='absolute inset-0 bg-black hidden dark:block'>
+
+
+  <!-- Dark Theme: Twinkling Stars / Metors -->
+
+  <script is:inline src="/js/bg.js" />
+
+  <div class='absolute inset-0 block bg-black top-24 bottom-0 text-white'>
     <div id='stars1' class='fixed inset-0'></div>
     <div id='stars2' class='fixed inset-0'></div>
     <div id='stars3' class='fixed inset-0'></div>
   </div>
 
-  <!-- Dark Theme: Twinkling Stars / Metors -->
-  <div id="galaxy" class="fixed inset-0">
-    <div class="hidden dark:block">
-      <TwinklingStars/>
-      <MeteorShower/>
-    </div>
-  </div>
+  <section class="relative h-screen w-full bg-black mt-24">
 
-  <script is:inline src="/js/bg.js" />
 
-  <section class="relative h-screen w-full">
+    <div class="animate relative h-full w-full flex items-center justify-center  text-white" >
 
-    <div class="animate absolute h-full w-full flex items-center justify-center  mt-16" >
-      <div class='relative w-full h-full flex items-center justify-center  '>
-        <img src="/screen.png" class="mx-auto block">
+      <div class='relative w-full h-full flex flex-col text-xl items-center justify-center border-4 '>
+        <img src="/screen.png" class="mx-auto inset-0">
       </div>
     </div>
+    <div id="galaxy" class="fixed inset-0">
+      <div class="block">
+        <TwinklingStars/>
+        <MeteorShower/>
+      </div>
+    </div>
+
   </section>
 
   <div class="relative bg-white dark:bg-black">
@@ -118,48 +123,38 @@ const stack = [
             Über mich
           </p>
           <p>
-          Seit meiner Jugend bin ich von der
-          Programmierung, der Schönheit der
-          Logik, der Notwendigkeit, um die Ecke
-          zu denken, eben analytisch und
-          lösungsorientiert zu arbeiten,
-          fasziniert. Das Kreative, der
-          Anspruch, mich in die Anwender
-          versetzen zu können, und das
-          Unvorhersehbare, das mich zwingt,
-          die gewohnten Pfade zu verlassen und
-          neue Lösungen zu finden, machen die Entwicklung zu meiner Leidenschaft.
+            Seit meiner Jugend begeistert mich die Entwicklung von Software, weil dahinter die Schönheit der Logik zu finden ist. Und es fasziniert mich die Notwendigkeit, immer wieder "um die Ecke" denken zu müssen und damit ebenso analytisch wie lösungsorientiert arbeiten zu können. Meiner Kreativität freien Lauf zu lassen, die Anspruch der Anwender zu übertreffen und die stete Herausforderung, gewohnte Wege zu verlassen, um neue Lösungen zu finden – das ist nicht nur ein Auftrag oder ein Job, sondern Leidenschaft.
           </p>
           <p>
-            Begonnen als Softwareentwickler im Desktopbereich, bin ich seit mittlerweile 20 Jahren selbstständig – insbesondere im Bereich Tourismus und Webinare – als Webentwickler tätig.
+            Meine Wurzeln als Softwareentwickler liegen im Desktopbereich; seit mittlerweile 20 Jahren bin ich selbständig und habe mich – insbesondere im Bereich Tourismus und Webinare – als Webentwickler spezialisiert.
           </p>
         </article>
       </section>
 
       <!-- Blog Preview Section -->
-  <!--
-      <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Letzte Blogeinträge
-            </p>
-            <a href="/blog" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                Alle Blogeinträge
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {posts.map((post) => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      -->
+      <!--
+          <section class="animate">
+            <div class="space-y-4">
+              <div class="flex justify-between">
+                <p class="font-semibold text-black dark:text-white">
+                  Letzte Blogeinträge
+                </p>
+                <a href="/blog" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
+                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
+                    Alle Blogeinträge
+                  </span>
+                </a>
+              </div>
+              <ul class="space-y-4">
+                {posts.map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+          -->
 
       <!-- Tech Stack Section -->
 
@@ -170,11 +165,11 @@ const stack = [
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-5 grid grid-cols-2 lg:grid-cols-5">
             {stack.map(item => (
-              <StackCard 
-                text={item?.text || ''}
-                icon={item?.icon || ''}
-                href={item?.href || ''}
-              />
+                <StackCard
+                    text={item?.text || ''}
+                    icon={item?.icon || ''}
+                    href={item?.href || ''}
+                />
             ))}
           </div>
         </div>
