@@ -63,7 +63,7 @@ const stack = [
     text: "Vue.js",
     icon: "tabler-brand-vue",
     href: "https://vuejs.org"
-  },,
+  },
   {
     text: "WordPress",
     icon: "tabler-brand-wordpress",
@@ -96,24 +96,13 @@ const stack = [
     </div>
   </div>
 
-  <script is:inline src="/js/bg.js"></script>
-  
-  <!-- HERO -->
+  <script is:inline src="/js/bg.js" />
+
   <section class="relative h-screen w-full">
 
-    <div class="animate absolute h-full w-full flex items-center justify-center">
-      <div class='relative w-full h-full flex items-center justify-center'>
-        <div class='p-5 text-center'>
-          <p class='animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75'>
-            Willkommen bei
-          </p>
-          <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold  text-black dark:text-white'>
-            twiceware solutions e. K.
-          </p>
-          <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Webentwicklung seit 2004
-          </p>
-        </div>
+    <div class="animate absolute h-full w-full flex items-center justify-center  mt-16" >
+      <div class='relative w-full h-full flex items-center justify-center  '>
+        <img src="/screen.png" class="mx-auto block">
       </div>
     </div>
   </section>
@@ -123,9 +112,27 @@ const stack = [
 
 
       <!-- About Section -->
-      <section class="animate hidden">
+      <section class="animate">
         <article>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+          <p class="font-semibold text-black dark:text-white text-left">
+            Über mich
+          </p>
+          <p>
+          Seit meiner Jugend bin ich von der
+          Programmierung, die Schönheit der
+          Logik, die Notwendigkeit, um die Ecke
+          zu denken, eben analytisch und
+          lösungsorientiert zu arbeiten,
+          fasziniert. Das Kreative, der
+          Anspruch, mich in die Anwender
+          versetzen zu können, und das
+          Unvorhersehbare, das mich zwingt,
+          die gewohnten Pfade zu verlassen und
+          neue Lösungen zu finden, machen die Entwicklung zu meiner Leidenschaft.
+          </p>
+          <p>
+            Begonnen als Softwareentwickler im Desktopbereich, bin ich seit mittlerweile 20 Jahren selbstständig – insbesondere im Bereich Tourismus und Webinare – als Webentwickler tätig.
+          </p>
         </article>
       </section>
 
@@ -159,7 +166,7 @@ const stack = [
       <section class="animate">
         <div class="space-y-4">
           <p class="font-semibold text-black dark:text-white text-center">
-            Wir sprechen und nutzen
+            Ich spreche und nutze
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-5 grid grid-cols-2 lg:grid-cols-5">
             {stack.map(item => (

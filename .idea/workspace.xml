@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StackCard.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StackCard.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BottomLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BottomLayout.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/TopLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/TopLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/legal/privacy.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/legal/privacy.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +67,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PS-243.22562.233" />
-        <option value="bundled-php-predefined-a98d8de5180a-7980c7aaca61-com.jetbrains.php.sharedIndexes-PS-243.22562.233" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -87,6 +82,9 @@
       <workItem from="1736950011265" duration="6255000" />
       <workItem from="1736957231362" duration="17000" />
       <workItem from="1736972350745" duration="5000" />
+      <workItem from="1736979343347" duration="1750000" />
+      <workItem from="1737025312787" duration="1843000" />
+      <workItem from="1737027174846" duration="3223000" />
     </task>
     <servers />
   </component>
