@@ -15,8 +15,8 @@ import '@fontsource/clear-sans/700.css';
   <Container size="lg">
     <div class="relative h-full w-full">
       <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold">
-        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out space-x-0.5">
-          <img src="/twsek-logo-bild-orange-weiß.png" class="h-10 dark:bg-whitedark:border-white" alt="twiceware solutions e. K. - Logo"/>
+        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out space-x-2.5">
+          <img src="/twsek-logo-bild-orange-weiß.png" class="rounded-full h-10 dark:bg-whitedark:border-white" alt="twiceware solutions e. K. - Logo"/>
           <img src="/twsek-schriftzug-schwarz.png" class="h-10 dark:hidden">
           <img src="/twsek-schriftzug-weiß.png" class="h-10 hidden dark:block">
         </a>
@@ -41,11 +41,13 @@ import '@fontsource/clear-sans/700.css';
           </svg>
         </a>
 
+        <!--
         <a href="/rss.xml" target="_blank" aria-label={`Rss feed for ${SITE.TITLE}`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
           <svg class="size-full">
             <use href="/ui.svg#rss"></use>
           </svg>
         </a>
+        -->
 
         <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
           <svg class="size-full block dark:hidden">
