@@ -4,11 +4,6 @@ import { cn } from "@lib/utils"
 const { pathname } = Astro.url
 const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
-import '@fontsource/clear-sans/100.css';
-import '@fontsource/clear-sans/300.css';
-import '@fontsource/clear-sans/400.css';
-import '@fontsource/clear-sans/500.css';
-import '@fontsource/clear-sans/700.css';
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 text-sans">
@@ -16,7 +11,7 @@ import '@fontsource/clear-sans/700.css';
     <div class="relative h-full w-full">
       <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold">
         <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out space-x-2.5">
-          <img src="/twsek-logo-bild-orange-weiß.png" class="rounded-full h-10 dark:bg-whitedark:border-white" alt="twiceware solutions e. K. - Logo"/>
+          <img src="/twsek-logo-bild-orange-weiß.png" class="h-10 " alt="twiceware solutions e. K. - Logo"/>
           <img src="/twsek-schriftzug-schwarz.png" class="h-10 dark:hidden">
           <img src="/twsek-schriftzug-weiß.png" class="h-10 hidden dark:block">
         </a>

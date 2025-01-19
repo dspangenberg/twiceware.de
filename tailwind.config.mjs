@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "sans": ["Clear Sans", ...defaultTheme.fontFamily.sans],
+        "sans": ["jaf-facitweb", ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

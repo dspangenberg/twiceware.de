@@ -11,8 +11,6 @@ html {
   overflow-y: scroll;
   color-scheme: light;
   background-color: white;
-  font-family: "Clear Sans", sans-serif;
-  
 }
 
 html.dark {
@@ -22,7 +20,7 @@ html.dark {
 
 html,
 body {
-  @apply h-full w-full antialiased;
+  @apply h-full w-full antialiased font-sans;
   @apply bg-white dark:bg-black;
   @apply text-black/75 dark:text-white/75;
 }
