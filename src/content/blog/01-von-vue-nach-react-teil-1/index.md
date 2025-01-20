@@ -74,7 +74,7 @@ const closeStore = () => {
     closeSomething()
 }
 
-export { type People, fetchOrgs, closeStore}
+export { type Org, fetchOrgs, closeStore}
 
 ```
 
@@ -145,13 +145,13 @@ Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir u
 
     import { useEffect, useState }  from 'react'
     
-    import {type People, fetchOrg, close } from '@/stores/org'
+    import {type Org, fetchOrg, close } from '@/stores/org'
         
     const [orgs, setOrgs ] = useState<Org[]>([])
     const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
     
 
-    useEffect(async () => {
+    useEffect(() => {
         setNumberOfOrgs(orgs.length)
     }, [orgs])
 
@@ -166,7 +166,7 @@ Auch unsere Watcher ist ein useEffect
 
     import { useEffect, useState }  from 'react'
     
-    import {type People, fetchOrg, close } from '@/stores/org'
+    import {type Org, fetchOrg, close } from '@/stores/org'
         
     const [orgs, setOrgs] = useState<Org[]>([])
     const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
@@ -190,7 +190,7 @@ Wir beobachten orgs und wenn es sich geändert hat, setzen wir die Länge (orgs.
 
     import { useEffect, useState }  from 'react'
     
-    import {type People, fetchOrgs, close } from '@/stores/org'
+    import {type Org, fetchOrgs, close } from '@/stores/org'
 
     const [query, setQuery] = useState<string>('')
     const [orgs, setOrgs] = useState<Org[]>([])
