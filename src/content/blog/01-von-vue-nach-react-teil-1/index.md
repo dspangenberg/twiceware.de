@@ -9,15 +9,19 @@ tags:
 - ReactJS
 ---
 
-## Vue
+## Lifecycle Hooks, Computed Properties und Watcher
 
-In unserem Beispiel möchten wir unsere Organisationen über den Pinia-Store abrufen. Der erste Abruf [^1] erfolgt über onMounted;
-ändern sich der Query-Part unserer Route, rufen wir weitere oder gefilterte Daten über unserer Watcher ab.
+Wir möchten wie in unserem kleinen Vue-Beispiel auch in unserer React-Anwendung mit Lifecycle Hooks, Computed Properties und Watcher arbeiten
+möchten.
+
+In unserem Beispiel rufen wir unser Organisationen über den Pinia-Store ab. Der erste Abruf [^1] erfolgt über onMounted;
+ändert sich der Query-Part unserer Route, rufen wir weitere oder gefilterte Daten über unserer Watcher ab.
 
 Damit wir auch einen Case für computed und onUnmounted haben, holen wir uns die Zahl der Organisationen über numberOfOrgs ab und schließen
 die Abfrage im Pinia-Store.
 
 
+### Vue-Beispiel
 
 ```tsx
 
@@ -78,9 +82,9 @@ export { type Org, fetchOrgs, closeStore}
 
 ```
 
-### Definition useEffect
+## Definition useEffect
 
-#### useEffect(setup, dependencies?)
+### useEffect(setup, dependencies?)
 
 Grundsätzlich wird bei useEffect der Programmcode (setup) ausgeführt, wenn sich die unter [dependencies] aufgeführten (reaktiven) Variablen geändert
 haben. Er kommt damit einem Watcher in Vue am nächsten.
@@ -102,7 +106,7 @@ haben. Er kommt damit einem Watcher in Vue am nächsten.
 
 ### Lifecycle
 
-#### Programmcode beim Mounting ausführen
+### Programmcode beim Mounting ausführen
 
 Möchten wir den Code direkt beim Mounten der Komponente ausführen, lassen wir die dependencies leer [].
 
@@ -159,7 +163,7 @@ Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir u
 
 #### Watcher
 
-Auch unsere Watcher ist ein useEffect
+Auch unser Watcher ist ein useEffect
 
 
 ```tsx
