@@ -108,7 +108,7 @@ haben. Er kommt damit einem Watcher in Vue am nächsten.
 
 ### Programmcode beim Mounting ausführen
 
-Möchten wir den Code direkt beim Mounten der Komponente ausführen, lassen wir die dependencies leer [].
+Möchten wir den Code direkt nach dem Mounten der Komponente ausführen, lassen wir die dependencies leer [].
 
 
 ```tsx
@@ -142,7 +142,7 @@ Wieder bleiben die dependencies leer und der Code der mittels return zurückgebe
 
 ### Computed Values
 
-Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir useEffect zusammen mit useState.
+Möchten wir das erreichen, das uns Vue mit Computed Properties bietet, nutzen wir useEffect zusammen mit useState.
 
 
 ```tsx

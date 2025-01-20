@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/blog/01-von-vue-nach-react-teil-1/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/01-von-vue-nach-react-teil-1/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +85,7 @@
       <workItem from="1737055457895" duration="3691000" />
       <workItem from="1737201868518" duration="22000" />
       <workItem from="1737307654781" duration="1615000" />
-      <workItem from="1737370714877" duration="19254000" />
+      <workItem from="1737370714877" duration="19567000" />
     </task>
     <servers />
   </component>
