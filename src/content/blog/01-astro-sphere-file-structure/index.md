@@ -49,7 +49,7 @@ die Abfrage im Pinia-Store.
 
 ## React Functional Components
 
-Für jemanden aus der Vue-Welt wird erst einmal überraschen, dass wir für alle Aufgaben (computed, onMounted, onUnmounted, watch) in React bei useEffect() landen werden.
+Für jemanden aus der Vue-Welt wird erst einmal überraschend sein, dass wir für alle Aufgaben (computed, onMounted, onUnmounted, watch) in React bei useEffect() landen werden.
 
 ### Unser Pseudo-Store für die weiteren Beispiele
 
