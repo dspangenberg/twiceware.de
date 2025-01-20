@@ -198,13 +198,9 @@ Wir beobachten orgs und wenn es sich geändert hat setzen wir die Länge (orgs.l
     const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
 
 
-    // onMounted
+    // onMounted + onMounted
     useEffect(async () => {
         const orgs = await fetchOrgs(query)
-    }, [])
-
-    // onUnmounted
-    useEffect(async () => {
         return () => {
             close()
         }
