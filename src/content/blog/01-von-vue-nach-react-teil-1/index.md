@@ -67,7 +67,7 @@ interface Org {
 }
 
 const fetchOrgs = async (query: string) => {
-    return await fetchFromApi<Org[]>('orgs')
+    return await fetchFromApi<Org[]>('orgs', query)
 } 
 
 const closeStore = () => {
@@ -194,12 +194,12 @@ Wir beobachten orgs und wenn es sich geändert hat, setzen wir die Länge (orgs.
 
     const [query, setQuery] = useState<string>('')
     const [orgs, setOrgs] = useState<Org[]>([])
-    const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
+    const [numberOfOrgs, setNumberOfOrgs] = useState<number>(0)
 
 
     // onMounted + onMounted
     useEffect(async () => {
-        const orgs = await fetchOrgs(query)
+        const orgs = await fetchOrgs('')
         return () => {
             close()
         }

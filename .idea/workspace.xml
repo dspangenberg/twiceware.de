@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/blog/01-astro-sphere-file-structure/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/01-astro-sphere-file-structure/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/[...slug].astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/01-astro-sphere-file-structure/index.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +86,7 @@
       <workItem from="1737055457895" duration="3691000" />
       <workItem from="1737201868518" duration="22000" />
       <workItem from="1737307654781" duration="1615000" />
-      <workItem from="1737370714877" duration="13821000" />
+      <workItem from="1737370714877" duration="15437000" />
     </task>
     <servers />
   </component>
