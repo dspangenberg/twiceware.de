@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         "sans": ["Radio Canada Variable", ...defaultTheme.fontFamily.sans],
+        'mono': ["JetBrains Mono Variable", ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

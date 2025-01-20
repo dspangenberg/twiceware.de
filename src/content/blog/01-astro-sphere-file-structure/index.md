@@ -1,6 +1,6 @@
 ---
 title: "Von Vue.js zu ReactJS – Teil 1 (useEffect)"
-summary: "Du sprichst Vue.js fließend und denkst wie die Composition API. Doch Dein nächsten Projekt soll mit ReactJS erstellt werden. Diese Serie soll Dir beim umstieg und umdenken ein wenig helfen."
+summary: "Aller Anfang kann beschwerlich sein; so auch der Umstieg von Vue.js auf ReactJS."
 date: "Mar 17 2024"
 draft: false
 tags:
@@ -14,8 +14,8 @@ tags:
 In unserem Beispiel möchten wir unsere Organisationen über den Pinia-Store abrufen. Der erste Abruf [^1] erfolgt über onMounted;
 ändern sich der Query-Part unserer Route, rufen wir weitere oder gefilterte Daten über unserer Watcher ab.
 
-Damit wir auch einen Case für computed und onUnmounted haben holen wir uns die Zahl der Organisationen über numberOfOrgs ab und schließen 
-die Abfrage im Pinia Store.
+Damit wir auch einen Case für computed und onUnmounted haben, holen wir uns die Zahl der Organisationen über numberOfOrgs ab und schließen
+die Abfrage im Pinia-Store.
 
 
 
@@ -83,7 +83,7 @@ export { type People, fetchOrgs, closeStore}
 #### useEffect(setup, dependencies?)
 
 Grundsätzlich wird bei useEffect der Programmcode (setup) ausgeführt, wenn sich die unter [dependencies] aufgeführten (reaktiven) Variablen geändert
-haben. Er kommt damit einem Watcher in Vue am Nähesten.
+haben. Er kommt damit einem Watcher in Vue am nächsten.
 
 
 
@@ -119,7 +119,7 @@ Möchten wir den Code direkt beim Mounten der Komponente ausführen, lassen wir 
 
 ### Programmcode beim Unmount ausführen
 
-Wieder bleiben die dependencies leer und der Code der mitteils return zurückgeben wird, wird beim Unmount ausgeführt:
+Wieder bleiben die dependencies leer und der Code der mittels return zurückgeben wird, wird beim Unmount ausgeführt:
 
 ```tsx
     
@@ -159,7 +159,7 @@ Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir u
 
 #### Watcher
 
-Auch unsere Watcher wird zu useEffect
+Auch unsere Watcher ist ein useEffect
 
 
 ```tsx
@@ -181,10 +181,9 @@ Auch unsere Watcher wird zu useEffect
 
 ```
 
-Wir beobachten orgs und wenn es sich geändert hat setzen wir die Länge (orgs.length) über setNumberOfOrgs.
+Wir beobachten orgs und wenn es sich geändert hat, setzen wir die Länge (orgs.length) über setNumberOfOrgs.
 
 ### Alles in einem
-
 
 
 ```tsx
@@ -222,6 +221,6 @@ Wir beobachten orgs und wenn es sich geändert hat setzen wir die Länge (orgs.l
 
 ```
 
-
+### Fußnoten
 
 [^1]: Wir könnten die ersten Daten natürlich auch über eine sofortige Reaktion vom Server holen. Aber dann hätte onMounted nichts zu tun. 

@@ -20,6 +20,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/solid-js": "^4.4.4",
     "@astrojs/tailwind": "^5.1.4",
+    "@fontsource-variable/jetbrains-mono": "^5.1.2",
     "@fontsource-variable/radio-canada": "^5.1.1",
     "@fontsource/clear-sans": "^5.1.0",
     "@hugeicons/react": "0.8.0-beta.1",
