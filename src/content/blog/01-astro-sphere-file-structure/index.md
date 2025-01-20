@@ -147,8 +147,8 @@ Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir u
     
     import {type People, fetchOrg, close } from '@/stores/org'
         
-    const [setOrgs, orgs] = useState<Org[]>([])
-    const [setNumberOfOrgs, numberOfOrg] = useState<number>(0)
+    const [orgs, setOrgs ] = useState<Org[]>([])
+    const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
     
 
     useEffect(async () => {
@@ -168,8 +168,8 @@ Auch unsere Watcher wird zu useEffect
     
     import {type People, fetchOrg, close } from '@/stores/org'
         
-    const [setOrgs, orgs] = useState<Org[]>([])
-    const [setNumberOfOrgs, numberOfOrg] = useState<number>(0)
+    const [orgs, setOrgs] = useState<Org[]>([])
+    const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
     const [query, setQuery] = useState<string>('')
 
     
