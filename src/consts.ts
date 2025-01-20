@@ -11,13 +11,12 @@ export const SITE: Site = {
 export const WORK: Page = {
   TITLE: "Referenzen",
   DESCRIPTION: "Places I have worked.",
-  BACKTEXT: 'Zurück zu den Referenzen'
 }
 
 // Blog Page
 export const BLOG: Page = {
   TITLE: "Blog",
-  BACKTEXT: 'Zurück zur Blogübersicht'
+  DESCRIPTION: "Writing on topics I am passionate about.",
 }
 
 // Projects Page 
@@ -38,17 +37,15 @@ export const LINKS: Links = [
     TEXT: "Startseite",
     HREF: "/", 
   },
-  /*
-    {
-      TEXT: "Referenzen",
-      HREF: "/referenzen",
-    },
-*/
   {
     TEXT: "Blog",
     HREF: "/blog",
   },
-  /*
+    /*
+  {
+    TEXT: "Referenzen",
+    HREF: "/referebzen",
+  },
   {
     TEXT: "Projekte",
     HREF: "/projekte",
