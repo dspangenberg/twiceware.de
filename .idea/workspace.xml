@@ -5,9 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/rechtliches/terms.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/rechtliches/terms.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BaseHead.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseHead.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/01-astro-sphere-file-structure/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/01-astro-sphere-file-structure/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/02-astro-sphere-getting-started/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/03-astro-sphere-add-new-post-or-projects/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/04-astro-sphere-writing-markdown/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/04-astro-sphere-writing-markdown/spongebob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/05-astro-sphere-writing-mdx/MyComponent.astro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/05-astro-sphere-writing-mdx/index.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/06-astro-sphere-social-links/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/PageLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/PageLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blog/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/[...slug].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/dspangenberg/Entwicklung/twiceware.cloud/twiceware.de/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -86,6 +104,8 @@
       <workItem from="1737035189242" duration="10891000" />
       <workItem from="1737055457895" duration="3691000" />
       <workItem from="1737201868518" duration="22000" />
+      <workItem from="1737307654781" duration="1615000" />
+      <workItem from="1737370714877" duration="11199000" />
     </task>
     <servers />
   </component>

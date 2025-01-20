@@ -1,6 +1,7 @@
 export type Page = {
   TITLE: string
   DESCRIPTION: string
+  BACKTEXT?: string
 }
 
 export interface Site extends Page {

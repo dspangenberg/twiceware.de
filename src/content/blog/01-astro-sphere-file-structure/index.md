@@ -1,51 +1,231 @@
 ---
-title: "Astro Sphere: File Structure"
-summary: "You'll find these directories and files in the project. What do they do?"
+title: "Von Vue.js zu ReactJS – Teil 1 (useEffect)"
+summary: "Du sprichst Vue.js fließend und denkst wie die Composition API. Doch Dein nächsten Projekt soll mit ReactJS erstellt werden. Diese Serie soll Dir beim umstieg und umdenken ein wenig helfen."
 date: "Mar 17 2024"
 draft: false
 tags:
 - Tutorial
-- Astro
-- Astro Sphere
+- Vue.js
+- ReactJS
 ---
 
-A one line summary of what each file and directory is for:
-```js
-/
-├── public/ // Files publicly available to the browser
-│   ├── fonts/ // The default fonts for Astro Sphere
-│   │   └── atkinson-bold.woff  // default font weight 700
-│   │   └── atkinson-regular.woff // default font weight 400
-│   ├── js/ // Javascript that will be imported into <head>
-│   │   └── animate.js // function for animating page elements
-│   │   └── bg.js // function for generating the background
-│   │   └── scroll.js // scroll handler for the header styles
-│   │   └── theme.js // controls the light and dark theme
-│   └── brand.svg //the icon that displays in header and footer
-│   └── favicon.svg //the icon that displays in the browser
-│   └── ui.svg // an svg sprite for all ui icons on the website
-│   └── social.svg // an svg sprite for all social media icons
-│   └── open-graph.jpg // the default image for open-graph
-│   └── robots.txt // for web crawlers and bots to index the website
-├── src/ // Everything that will be built for the website
-│   ├── components/ // All astro and SolidJs components
-│   ├── content/ // Contains all static markdown to be compiled
-│   │   |  blog/ // Contains all blog post markdown
-│   │   |  projects/ // Contains all projects markdown
-│   │   |  work/ // Contains all work page markdown
-│   │   |  legal/ // Contains all legal docs markdown
-│   │   └── config.ts // Contains the collection config for Astro
-│   ├── layouts/ // Reused layouts across the website
-│   └── pages/ // All of the pages on the website
-│   └── styles/ // CSS and global tailwind styles
-│   └── lib/ // Global helper functions
-│   └── consts.ts // Page metadata, general configuration
-│   └── types.ts // Types for consts.ts
-└── .gitignore // Files and directories to be ignored by Git
-└── .eslintignore // Files and directories to be ignored by ESLint
-└── eslintrc.cjs // ESLint configuration
-└── astro.config.mjs // Astro configuration
-└── tailwind.config.mjs // Tailwind configuration
-└── tsconfig.json // Typescript configuration
-└── package.json // All the installed packages
+## Vue
+
+In unserem Beispiel möchten wir unsere Organisationen über den Pinia-Store abrufen. Der erste Abruf [^1] erfolgt über onMounted;
+ändern sich der Query-Part unserer Route, rufen wir weitere oder gefilterte Daten über unserer Watcher ab.
+
+Damit wir auch einen Case für computed und onUnmounted haben holen wir uns die Zahl der Organisationen über numberOfOrgs ab und schließen 
+die Abfrage im Pinia Store.
+
+
+
+```tsx
+
+    import { computed, onMounted, onUnmounted, watch  } from 'vue'
+    import { useRoute } from 'vue-router'
+    import { useOrgStore } from '@/stores/contactsStore'
+    import { storeToRefs } from 'pinia'
+
+
+    const orgStore = useOrgStore()
+    const { orgs } = storeToRefs(orgStore)
+
+    const route = useRoute()
+    
+    const query = computed(() => route.query)
+
+    const numberOfOrgs = computed(() => orgs.value).length || 0)
+    
+    watch(query, async () => {
+        await contactStore.getAll(query)
+    }, { immediate: false })        
+    
+    onMounted(async () => {
+        await contactStore.getAll() 
+    })
+
+    onUnmounted(() => contactStore.close())
 ```
+
+## React Functional Components
+
+Für jemanden aus der Vue-Welt wird erst einmal überraschen, dass wir für alle Aufgaben (computed, onMounted, onUnmounted, watch) in React bei useEffect() landen werden.
+
+### Unser Pseudo-Store für die weiteren Beispiele
+
+
+```ts
+interface People {
+    first_name,
+    last_name
+}
+
+interface Org {
+    name: string
+    website: string
+    people: People[]
+}
+
+const fetchOrgs = async (query: string) => {
+    return await fetchFromApi<Org[]>('orgs')
+} 
+
+const closeStore = () => {
+    closeSomething()
+}
+
+export { type People, fetchOrgs, closeStore}
+
+```
+
+### Definition useEffect
+
+#### useEffect(setup, dependencies?)
+
+Grundsätzlich wird bei useEffect der Programmcode (setup) ausgeführt, wenn sich die unter [dependencies] aufgeführten (reaktiven) Variablen geändert
+haben. Er kommt damit einem Watcher in Vue am Nähesten.
+
+
+
+<a href="https://react.dev/reference/react/useEffect" target="_blank">Ausführliche Dokumentation auf react.dev</a>
+
+
+```tsx
+    
+    import { useEffect }  from 'react'
+
+    useEffect(async () => {
+        tueWas()
+    }, [varA, varB])
+
+```
+
+### Lifecycle
+
+#### Programmcode beim Mounting ausführen
+
+Möchten wir den Code direkt beim Mounten der Komponente ausführen, lassen wir die dependencies leer [].
+
+
+```tsx
+    
+    import { useEffect }  from 'react'
+
+    useEffect(async () => {
+        tueWasWennDuGemountedBist()
+    }, [])
+
+```
+
+### Programmcode beim Unmount ausführen
+
+Wieder bleiben die dependencies leer und der Code der mitteils return zurückgeben wird, wird beim Unmount ausgeführt:
+
+```tsx
+    
+    import { useEffect }  from 'react'
+
+    useEffect(async () => {
+        return () => {
+            sayGoodBye();
+        }
+    }, [])
+
+```
+
+## Computed und Watcher
+
+
+### Computed Values
+
+Möchten wir das erreichen, das uns Vue mit Computed Values bietet, nutzen wir useEffect zusammen mit useState.
+
+
+```tsx
+
+    import { useEffect, useState }  from 'react'
+    
+    import {type People, fetchOrg, close } from '@/stores/org'
+        
+    const [setOrgs, orgs] = useState<Org[]>([])
+    const [setNumberOfOrgs, numberOfOrg] = useState<number>(0)
+    
+
+    useEffect(async () => {
+        setNumberOfOrgs(orgs.length)
+    }, [orgs])
+
+```
+
+#### Watcher
+
+Auch unsere Watcher wird zu useEffect
+
+
+```tsx
+
+    import { useEffect, useState }  from 'react'
+    
+    import {type People, fetchOrg, close } from '@/stores/org'
+        
+    const [setOrgs, orgs] = useState<Org[]>([])
+    const [setNumberOfOrgs, numberOfOrg] = useState<number>(0)
+    const [query, setQuery] = useState<string>('')
+
+    
+    // Ändert sich unsere Query rufen wir die gefilterten Daten ab
+    useEffect(async () => {
+        const orgs = await fetchOrgs()
+        setOrgs(orgs)
+    }, [query])
+
+```
+
+Wir beobachten orgs und wenn es sich geändert hat setzen wir die Länge (orgs.length) über setNumberOfOrgs.
+
+### Alles in einem
+
+
+
+```tsx
+
+    import { useEffect, useState }  from 'react'
+    
+    import {type People, fetchOrgs, close } from '@/stores/org'
+
+    const [query, setQuery] = useState<string>('')
+    const [orgs, setOrgs] = useState<Org[]>([])
+    const [numberOfOrg, setNumberOfOrgs] = useState<number>(0)
+
+
+    // onMounted
+    useEffect(async () => {
+        const orgs = await fetchOrgs()
+    }, [])
+
+    // onUnmounted
+    useEffect(async () => {
+        return () => {
+            close()
+        }
+    }, [])
+    
+    // computed 
+    useEffect(async () => {
+        setNumberOfOrgs(orgs.length)
+    }, [orgs])
+
+    
+    setQuery('meier')
+    
+    // watch query
+    useEffect(async () => {
+        const orgs = await fetchOrgs()
+        setOrgs(orgs)
+    }, [query])
+
+```
+
+
+
+[^1]: Wir könnten die ersten Daten natürlich auch über eine sofortige Reaktion vom Server holen. Aber dann hätte onMounted nichts zu tun. 

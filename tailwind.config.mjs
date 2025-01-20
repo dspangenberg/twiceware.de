@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "sans": ["jaf-facitweb", ...defaultTheme.fontFamily.sans],
+        "sans": ["Radio Canada Variable", ...defaultTheme.fontFamily.sans],
       },
       typography: {
         DEFAULT: {

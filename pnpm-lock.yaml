@@ -26,6 +26,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.4
         version: 5.1.4(astro@4.16.18(rollup@4.30.1)(typescript@5.7.3))(tailwindcss@3.4.17)
+      '@fontsource-variable/radio-canada':
+        specifier: ^5.1.1
+        version: 5.1.1
       '@fontsource/clear-sans':
         specifier: ^5.1.0
         version: 5.1.0
@@ -431,6 +434,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/radio-canada@5.1.1':
+    resolution: {integrity: sha512-gDSNTLRoMS+/LY3r6IE1aq/u76lIOvrehfYf9Pr6n/ZDXAPX378XqxLi73uDAZr0kKCL1ycuWLlalHRMRwS/HA==}
 
   '@fontsource/clear-sans@5.1.0':
     resolution: {integrity: sha512-eBfvK1VrPbe+yFLdvMFF8TUji/VJfW+2uG2B6KQax6pRWfNpTign+iS+4r8Aa+7MzvqduYcEXfq5RgeR/pcEJA==}
@@ -3098,6 +3104,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/radio-canada@5.1.1': {}
 
   '@fontsource/clear-sans@5.1.0': {}
 

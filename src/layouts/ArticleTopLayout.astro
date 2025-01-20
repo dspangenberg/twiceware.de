@@ -21,7 +21,8 @@ const repoUrl = collection === "projects" ? data.repoUrl : null
       <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out" />
     </svg>
     <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
-      Back to {collection}
+
+      Zurück zum <span class="capitalize">{collection}</span>
     </div>
   </a>
   <div class="flex flex-wrap text-sm uppercase mt-12 gap-3 opacity-75">
@@ -38,10 +39,10 @@ const repoUrl = collection === "projects" ? data.repoUrl : null
       {readingTime(body)}
     </div>
   </div>
-  <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
+  <h1 class="text-3xl font-semibold text-black dark:text-white mt-4">
     {title}
   </h1>
-  <div class="mt-1">
+  <div class="mt-4 font-semibold">
     {summary}
   </div>
   {(demoUrl || repoUrl) && 
