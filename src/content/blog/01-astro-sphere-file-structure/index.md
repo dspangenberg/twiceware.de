@@ -175,7 +175,7 @@ Auch unsere Watcher wird zu useEffect
     
     // Ändert sich unsere Query rufen wir die gefilterten Daten ab
     useEffect(async () => {
-        const orgs = await fetchOrgs()
+        const orgs = await fetchOrgs(query)
         setOrgs(orgs)
     }, [query])
 
@@ -200,7 +200,7 @@ Wir beobachten orgs und wenn es sich geändert hat setzen wir die Länge (orgs.l
 
     // onMounted
     useEffect(async () => {
-        const orgs = await fetchOrgs()
+        const orgs = await fetchOrgs(query)
     }, [])
 
     // onUnmounted
