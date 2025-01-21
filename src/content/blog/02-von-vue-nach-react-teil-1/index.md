@@ -60,11 +60,7 @@ die Abfrage im Pinia-Store.
 
 In ReactJS benötigen wir dafür (fast) außschließlich unsere neuen Freund useEffect().
 
-
-
-
-
-Für jemanden aus der Vue-Welt wird erst einmal überraschend sein, dass wir für alle Aufgaben (computed, onMounted, onUnmounted, watch) in React bei useEffect() landen werden.
+Auf einen React kompatiblen Store verzichte ich; dafür sollte der folgende Pseodu-Code reichen. 
 
 ### Unser Pseudo-Store für die weiteren Beispiele
 
@@ -81,7 +77,7 @@ interface Org {
     people: People[]
 }
 
-const fetchOrgs = async (query: string) => {
+const fetchOrgs = async (query: string): <Promise<Org[]> => {
     return await fetchFromApi<Org[]>('orgs', query)
 } 
 
