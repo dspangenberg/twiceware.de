@@ -1,7 +1,8 @@
 ---
-title: "Von Vue.js zu ReactJS – Teil 1 (useEffect)"
-summary: "Aller Anfang kann beschwerlich sein; so auch der Umstieg von Vue.js auf ReactJS."
-date: "Mar 17 2024"
+title: "V2R Teil 1– Lifecycle Hooks, Computed Properties und Watcher"
+summary: "Zumindest wenn es um React Functional Components geht, wirst Du um useEffect nicht herum kommen, wenn Du Lifecycle Hooks, Computed Properties und Watcher
+benötigst."
+date: "Jan 21 2025"
 draft: false
 tags:
 - Tutorial
@@ -9,12 +10,16 @@ tags:
 - ReactJS
 ---
 
+**Dieser Artikel ist Teil der Serie  [Von Vue.js zu ReactJS (V2R) – Einführung](/blog/01-von-vue-nach-react)**
+
 ## Lifecycle Hooks, Computed Properties und Watcher
 
-Wir möchten wie in unserem kleinen Vue-Beispiel auch in unserer React-Anwendung mit Lifecycle Hooks, Computed Properties und Watcher arbeiten
-möchten.
 
-In unserem Beispiel rufen wir unser Organisationen über den Pinia-Store ab. Der erste Abruf [^1] erfolgt über onMounted;
+
+
+Wir möchten wie in unserem kleinen Vue-Beispiel auch in unserer React-Anwendung mit Lifecycle Hooks, Computed Properties und Watcher arbeiten.
+
+In unserem Beispiel rufen wir unsere Organisationen über einen Pinia-Store ab. Der erste Abruf [^1] erfolgt über onMounted;
 ändert sich der Query-Part unserer Route, rufen wir weitere oder gefilterte Daten über unserer Watcher ab.
 
 Damit wir auch einen Case für computed und onUnmounted haben, holen wir uns die Zahl der Organisationen über numberOfOrgs ab und schließen
@@ -52,6 +57,12 @@ die Abfrage im Pinia-Store.
 ```
 
 ## React Functional Components
+
+In ReactJS benötigen wir dafür (fast) außschließlich unsere neuen Freund useEffect().
+
+
+
+
 
 Für jemanden aus der Vue-Welt wird erst einmal überraschend sein, dass wir für alle Aufgaben (computed, onMounted, onUnmounted, watch) in React bei useEffect() landen werden.
 
