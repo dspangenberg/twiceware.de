@@ -35,9 +35,14 @@ Ich mag Oberflächen, die durch Minimalismus sexy sind. Aber allein deshalb wage
 
 In puncto Jobsuche haben ReactJS-Entwickler die Nase nun mal vorn; egal, ob sie als Freelancer oder Angestellte auf der Suche sind.
 
-Und letztlich möchte ich mein neues Projekt ohne Altlasten beginnen. Ich könnte aus einer Vielzahl von Komponenten und Composable wählen, und
-mir auf den ersten Blick zeitsparen. Schon anders sieht es aus, wenn ein großer Teil noch auf die Options API setzen oder nicht mal Typescript
-sprechen. 
+Und letztlich möchte ich mein neues Projekt ohne Altlasten beginnen. Ich könnte aus einer Vielzahl von Komponenten und Composable wählen, die ich über
+die Jahre entwickelt habe und mir auf den ersten Blick zeitsparen.  Aber da vieles noch aus den Zeiten der Options API stammte, kein Typescript kennt, ist der Neubeginn mit einen sauberen Vue-Projekt ncht viel weniger aufwendig.
+
+## Noch ein Spoiler
+
+In den ersten Stunden und Tagen mit ReactJS habe ich mich gefragt, ob ReactJS mir jemals – jedenfalls nüchtern - Spaß machen kann. Und nach einigen
+Wochen kann ich ohne rot zu werden, sagen: Ja.
+
 
 ## Ist das die Geschichte?
 
