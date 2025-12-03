@@ -1,28 +1,55 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root{
-  --copy-btn-margin:10px;
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+:root {
+  --font-sans: "Radio Canada Variable", sans-serif;
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.488 0.243 240);
+  --primary-foreground: oklch(0.97 0.014 240);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-
+/* Base styles */
 html {
   overflow-y: scroll;
   color-scheme: light;
   background-color: white;
 }
 
-html.dark {
-  color-scheme: dark;
-  background-color: black;
-}
-
 html,
 body {
   @apply h-full w-full antialiased font-sans;
-  @apply bg-white dark:bg-black;
-  @apply text-black/75 dark:text-white/75;
+  @apply bg-white text-black;
 }
 
 body {
@@ -30,7 +57,7 @@ body {
 }
 
 main {
-  @apply flex flex-col flex-1 bg-white dark:bg-black;
+  @apply flex flex-col flex-1 bg-white;
 }
 
 header {
@@ -43,17 +70,17 @@ header:not(.scrolled) {
 }
 
 header.scrolled {
-  @apply bg-white/95 dark:bg-black/50;
-  @apply border-black/10 dark:border-white/25;
+  @apply bg-white/95;
+  @apply border-black/10;
   @apply backdrop-blur-sm saturate-200;
 }
 
 article {
-  @apply prose dark:prose-invert max-w-full pb-12;
+  @apply prose max-w-full pb-12;
 }
 
 .page-heading {
-  @apply font-semibold text-black dark:text-white text-2xl;
+  @apply font-semibold text-black text-4xl;
 }
 
 .blend {
@@ -74,7 +101,9 @@ article {
 .animate {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .animate.show {
@@ -89,65 +118,23 @@ article img {
   margin: 0 auto;
 }
 
-/**
- * TWINKLE STARS
- */
-
- #twinkle-star.template {
-  @apply absolute -left-full; /* hide offscreen */
+div.legal a {
+  @apply no-underline hover:underline ;
 }
 
-#twinkle-star.twinkle {
-  @apply animate-twinkle; /* defined in tailwind.config */
-}
-
-
-/**
- * Meteors
- */
-
-#meteors .shower {
-  @apply absolute inset-0 top-0;;
-  @apply left-1/2 -translate-x-1/2;
-  @apply w-screen aspect-square;
-}
-
-#meteors .meteor {
-  @apply animate-meteor; /* defined in tailwind.config */
-  @apply absolute top-1/2 left-1/2 w-px h-[75vh];
-  @apply bg-gradient-to-b from-white to-transparent;
-}
-
-#meteors .shower.ur {
-  @apply rotate-45;
-}
-
-#meteors .shower.dr {
-  @apply rotate-135;
-}
-
-#meteors .shower.dl {
-  @apply rotate-225;
-}
-
-#meteors .shower.ul {
-  @apply rotate-315;
-}
-
-.copy-cnt{
-  @apply absolute w-full;
-  top:var(--copy-btn-margin);
-}
-.copy-btn {
-  @apply  w-[30px] fixed;
-  left:calc(100% - var(--copy-btn-margin));
-  transform: translateX(-100%);
-}
-
-.copy-svg {
-  @apply w-full aspect-square text-white opacity-70 hover:opacity-90;
+article p {
+  @apply text-xl md:text-2xl leading-relaxed;
 }
 
 #footnote-label {
   @apply hidden;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-black;
+  }
 }

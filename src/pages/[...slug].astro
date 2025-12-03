@@ -1,0 +1,47 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+import PageLayout from "@/layouts/PageLayout.astro"
+import TopLayout from "@/layouts/TopLayout.astro"
+import BottomLayout from "@/layouts/BottomLayout.astro"
+import { SITE } from "@/consts"
+
+// Create the static pages for legal docs and general pages
+export async function getStaticPaths() {
+	const rechtliches = await getCollection("rechtliches")
+	const pages = await getCollection("pages")
+
+	const rechtlichesPaths = rechtliches.map((doc) => ({
+		params: { slug: doc.slug },
+		props: doc,
+	}))
+
+	const pagesPaths = pages.map((doc) => ({
+		params: { slug: doc.slug },
+		props: doc,
+	}))
+
+	return [...rechtlichesPaths, ...pagesPaths]
+}
+
+// Get the requested doc
+type Props = CollectionEntry<"rechtliches"> | CollectionEntry<"pages">;
+const doc = Astro.props
+const { title } = doc.data
+const { Content } = await doc.render();
+
+---
+
+<PageLayout title={title} description={`${title} for ${SITE.TITLE}`}>
+  <TopLayout>
+    <div class="animate">
+      <div class="page-heading">
+        {title}
+      </div>
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <article class="animate">
+      <Content/>
+    </article>
+  </BottomLayout>
+</PageLayout>

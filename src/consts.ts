@@ -1,47 +1,57 @@
-import type { Site, Page, Links, Socials } from "@types"
+import type { Links, Page, Site, Socials } from '@/types'
 
 // Global
 export const SITE: Site = {
-  TITLE: "twiceware.de",
-  DESCRIPTION: "twiceware solutions e. K. in Bonn - Webentwicklung seit 2004",
-  AUTHOR: "Danny Spangenberg",
+  TITLE: 'twiceware.de',
+  DESCRIPTION: 'twiceware solutions e. K. in Bonn - Webentwicklung seit 2004',
+  AUTHOR: 'Danny Spangenberg'
 }
 
 // Work Page
 export const WORK: Page = {
-  TITLE: "Referenzen",
-  DESCRIPTION: "Places I have worked.",
+  TITLE: 'Referenzen',
+  DESCRIPTION: 'Places I have worked.'
 }
 
 // Blog Page
 export const BLOG: Page = {
-  TITLE: "Blog",
-  DESCRIPTION: "Writing on topics I am passionate about.",
+  TITLE: 'Blog',
+  DESCRIPTION: 'Writing on topics I am passionate about.'
 }
 
-// Projects Page 
+// About Page
+export const ABOUT: Page = {
+  TITLE: 'Über mich',
+  DESCRIPTION: 'Softwareentwickler und Webentwickler seit über 20 Jahren.'
+}
+
+// Projects Page
 export const PROJECTS: Page = {
-  TITLE: "Projekte",
-  DESCRIPTION: "Recent projects I have worked on.",
+  TITLE: 'Projekte',
+  DESCRIPTION: 'Recent projects I have worked on.'
 }
 
 // Search Page
 export const SEARCH: Page = {
-  TITLE: "Search",
-  DESCRIPTION: "Search all posts and projects by keyword.",
+  TITLE: 'Search',
+  DESCRIPTION: 'Search all posts and projects by keyword.'
 }
 
 // Links
 export const LINKS: Links = [
-  { 
-    TEXT: "Startseite",
-    HREF: "/", 
+  {
+    TEXT: 'Startseite',
+    HREF: '/'
   },
   {
-    TEXT: "Blog",
-    HREF: "/blog",
+    TEXT: 'Über mich',
+    HREF: '/ueber-mich'
   },
-    /*
+  {
+    TEXT: 'Blog',
+    HREF: '/blog'
+  }
+  /*
   {
     TEXT: "Referenzen",
     HREF: "/referebzen",
@@ -56,23 +66,22 @@ export const LINKS: Links = [
 
 // Socials
 export const SOCIALS: Socials = [
-  { 
-    NAME: "E-Mail",
-    ICON: "email", 
-    TEXT: "danny@twiceware.de",
-    HREF: "mailto:danny@twiceware.de",
+  {
+    NAME: 'E-Mail',
+    ICON: 'email',
+    TEXT: 'danny@twiceware.de',
+    HREF: 'mailto:danny@twiceware.de'
   },
-  { 
-    NAME: "Github",
-    ICON: "github",
-    TEXT: "dspangenberg",
-    HREF: "https://github.com/dspangenberg"
+  {
+    NAME: 'Github',
+    ICON: 'github',
+    TEXT: 'dspangenberg',
+    HREF: 'https://github.com/dspangenberg'
   },
-  { 
-    NAME: "Bluesky",
-    ICON: "BlueSkyLogo",
-    TEXT: "dasp.work",
-    HREF: "https://bsky.app/dasp.work",
-  },
+  {
+    NAME: 'Bluesky',
+    ICON: 'BlueSkyLogo',
+    TEXT: 'dasp.work',
+    HREF: 'https://bsky.app/dasp.work'
+  }
 ]
-

@@ -9,14 +9,14 @@ const { text, icon, href } = Astro.props
 ---
 
 
-<a href={href} target="_blank" class="px-3 py-2 block group rounded  flex gap-2 items-center border-neutral-200 dark:border-neutral-700 hover:bg-neutral-100 hover:dark:bg-neutral-800 blend">
+<a href={href} target="_blank" class="px-3 py-2 group rounded !no-underline  flex gap-2 items-center border-neutral-200 hover:bg-neutral-100 blend">
 
   <div class="block">
-  <svg height={25} width={25} stroke="#000" stroke-width={2}>
+  <svg height={30} width={30} stroke="#000" stroke-width={2}>
     <use href={`/tabler-sprite.svg#${icon}`}></use>
   </svg>
   </div>
-  <div class="block text-sm text-neutral-500 dark:text-neutral-400 group-hover:text-black group-hover:dark:text-white blend">
+  <div class="block text-2xl text-neutral-500 group-hover:text-black blend">
     {text}
   </div>
 

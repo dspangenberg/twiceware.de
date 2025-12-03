@@ -1,207 +1,88 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import ArrowCard from "@components/ArrowCard"
-import StackCard from "@components/StackCard.astro"
-import { SITE, SOCIALS } from "@consts"
-import TwinklingStars from "@components/TwinklingStars.astro"
-import MeteorShower from "@components/MeteorShower.astro"
+import { getCollection } from 'astro:content'
+import { HomeCarousel } from '@/components/HomeCarousel'
+import { SITE, } from '@/consts'
+import PageLayout from '@/layouts/PageLayout.astro'
 
-const posts = (await getCollection("blog"))
-    .filter(post => !post.data.draft)
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    .slice(0,3)
+import * as React from 'react'
+import Container from '@/components/Container.astro'
+import { Typewriter } from "@/components/ui/typewriter"
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
 
 console.log(posts)
 
-const projects = (await getCollection("projects"))
-    .filter(project => !project.data.draft)
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    .slice(0,3)
+const projects = (await getCollection('projects'))
+  .filter(project => !project.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3)
 
 const stack = [
   {
-    text: "adonis",
-    icon: "tabler-brand-adonis-js",
-    href: "https://adonisjs.com"
+    text: 'adonis',
+    icon: 'tabler-brand-adonis-js',
+    href: 'https://adonisjs.com'
   },
   {
-    text: "Astro",
-    icon: "tabler-brand-astro",
-    href: "https://astro.build"
+    text: 'Astro',
+    icon: 'tabler-brand-astro',
+    href: 'https://astro.build'
   },
   {
-    text: "Laravel",
-    icon: "tabler-brand-laravel",
-    href: "https://laravel.com"
+    text: 'Laravel',
+    icon: 'tabler-brand-laravel',
+    href: 'https://laravel.com'
   },
   {
-    text: "Node.js",
-    icon: "tabler-brand-nodejs",
-    href: "https://nodejs.org"
+    text: 'Node.js',
+    icon: 'tabler-brand-nodejs',
+    href: 'https://nodejs.org'
   },
   {
-    text: "PHP",
-    icon: "tabler-brand-php",
-    href: "https://php.net"
+    text: 'PHP',
+    icon: 'tabler-brand-php',
+    href: 'https://php.net'
   },
   {
-    text: "ReactJS",
-    icon: "tabler-brand-react",
-    href: "https://react.dev"
-  },,
-  {
-    text: "tailwindcss",
-    icon: "tabler-brand-tailwind",
-    href: "https://tailwindcss.com"
+    text: 'ReactJS',
+    icon: 'tabler-brand-react',
+    href: 'https://react.dev'
   },
   {
-    text: "TypeScript",
-    icon: "tabler-brand-typescript",
-    href: "https://www.typescriptlang.org"
+    text: 'tailwindcss',
+    icon: 'tabler-brand-tailwind',
+    href: 'https://tailwindcss.com'
+  },
+  {
+    text: 'TypeScript',
+    icon: 'tabler-brand-typescript',
+    href: 'https://www.typescriptlang.org'
+  },
+  {
+    text: 'Vue.js',
+    icon: 'tabler-brand-vue',
+    href: 'https://vuejs.org'
+  },
+  {
+    text: 'WordPress',
+    icon: 'tabler-brand-wordpress',
+    href: 'https://wordpress.org'
   }
-  ,
-  {
-    text: "Vue.js",
-    icon: "tabler-brand-vue",
-    href: "https://vuejs.org"
-  },
-  {
-    text: "WordPress",
-    icon: "tabler-brand-wordpress",
-    href: "https://wordpress.org"
-  },
 ]
 ---
 
 <PageLayout title="Startseite" description={SITE.DESCRIPTION}>
 
-  <!-- Light Mode: Particles -->
-  <div class='absolute inset-0 block dark:hidden'>
-    <div id='particles1' class='fixed inset-0'></div>
-    <div id='particles2' class='fixed inset-0'></div>
-    <div id='particles3' class='fixed inset-0'></div>
-  </div>
 
-  <!-- Dark Theme: Stars -->
+  <section class="relative mt-16 w-full  flex items-center justify-center bg-white">
+    <Container size="xl">
 
-
-  <!-- Dark Theme: Twinkling Stars / Metors -->
-
-  <script is:inline src="/js/bg.js" />
-
-  <div class='absolute inset-0 block bg-black top-16 bottom-0 text-white'>
-    <div id='stars1' class='fixed inset-0'></div>
-    <div id='stars2' class='fixed inset-0'></div>
-    <div id='stars3' class='fixed inset-0'></div>
-  </div>
-
-  <div class="mt-24 " />
-  <section class="relative h-screen w-full bg-black hidden lg:block">
-
-
-    <div class="animate relative h-full w-full flex items-center justify-center  text-white" >
-
-      <div class='relative w-full h-full flex flex-col text-xl items-center justify-center'>
-        <img src="/screen.png" class="mx-auto inset-0">
+      <div class="my-12">
+      <HomeCarousel client:only="react" />
       </div>
-    </div>
-    <div id="galaxy" class="fixed inset-0">
-      <div class="block">
-        <TwinklingStars/>
-        <MeteorShower/>
-      </div>
-    </div>
-
+    </Container>
   </section>
-
-  <div class="relative bg-white dark:bg-black">
-    <div class="mx-auto max-w-screen-sm p-5  pb-16">
-
-
-      <!-- About Section -->
-      <section class="animate">
-        <article>
-          <p class="font-semibold text-black dark:text-white text-left">
-            Über mich
-          </p>
-          <p>
-            Seit meiner Jugend begeistert mich die Entwicklung von Software, weil dahinter die Schönheit der Logik zu finden ist. Und mich fasziniert die Notwendigkeit, immer wieder "um die Ecke" denken zu müssen und damit ebenso analytisch wie lösungsorientiert arbeiten zu können. Meiner Kreativität freien Lauf zu lassen, den Anspruch der Anwender zu übertreffen und die stete Herausforderung, gewohnte Wege zu verlassen, um neue Lösungen zu finden – das ist nicht nur ein Auftrag oder ein Job, sondern Leidenschaft.
-          </p>
-          <p>
-            Meine Wurzeln als Softwareentwickler liegen im Desktopbereich; seit mittlerweile 20 Jahren bin ich selbständig und habe mich – insbesondere im Bereich Tourismus und Webinare – als Webentwickler spezialisiert.
-          </p>
-        </article>
-      </section>
-
-      <!-- Blog Preview Section -->
-
-
-
-      <!-- Tech Stack Section -->
-
-      <section class="animate">
-        <div class="space-y-4">
-          <p class="font-semibold text-black dark:text-white text-left">
-            Ich spreche und nutze
-          </p>
-          <div class="flex flex-wrap items-center gap-2 mt-5 grid grid-cols-2 lg:grid-cols-5">
-            {stack.map(item => (
-                <StackCard
-                    text={item?.text || ''}
-                    icon={item?.icon || ''}
-                    href={item?.href || ''}
-                />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section class="animate">
-        <div class="space-y-4 pt-24">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Letzte Blogeinträge
-            </p>
-            <a href="/blog" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-                  <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                    Alle Blogeinträge
-                  </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {posts.map((post) => (
-                <li>
-                  <ArrowCard entry={post} />
-                </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <!-- Project Preview Section
-      <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Letzte Projekte
-            </p>
-            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                Alle Projekte
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
--->
-    </div>
-  </div>
 </PageLayout>

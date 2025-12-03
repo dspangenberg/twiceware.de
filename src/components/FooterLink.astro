@@ -1,0 +1,13 @@
+---
+import { cn } from "@/lib/utils"
+
+type Props = {
+  className?: string
+}
+
+const { className } = Astro.props;
+---
+
+<li class={cn('text-stone-600  px-2.5 hover:underline cursor-pointer', className)}>
+  <slot />
+</li>

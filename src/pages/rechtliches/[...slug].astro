@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
-import { SITE } from "@consts"
+import PageLayout from "@/layouts/PageLayout.astro"
+import TopLayout from "@/layouts/TopLayout.astro"
+import BottomLayout from "@/layouts/BottomLayout.astro"
+import { SITE } from "@/consts"
 
 // Create the static pages for legal docs
 export async function getStaticPaths() {
