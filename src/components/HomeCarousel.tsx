@@ -5,18 +5,16 @@ import {
   type CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
-import { DotPattern } from "@/components/ui/dot-pattern";
 
 export function HomeCarousel() {
   const slides = [
     { src: '/beleg-portal.png', alt: 'Belegportal' },
-    { src: '/opsc.png', alt: 'ELGA GmbH' },
-    { src: '/elga-gmbh.png', alt: 'ELGA GmbH' },
+    { src: '/opsc2.png', alt: 'ELGA GmbH' },
     { src: '/gnadtec.png', alt: 'gnadTec GmbH' },
+    { src: '/mtg.png', alt: 'ELGA GmbH' },
+    { src: '/elga-gmbh.png', alt: 'ELGA GmbH' },
     { src: '/akr.png', alt: 'autokaufrecht.info' }
   ]
 
@@ -39,7 +37,7 @@ export function HomeCarousel() {
     <div className="relative">
 
       <Carousel
-        className="w-full max-w-sm rounded-xl shadow-xl  border lg:max-w-7xl"
+        className="w-full max-w-sm rounded-xl shadow-xl mx-auto border xl:max-w-4xl 2xl:max-w-7xl"
         plugins={[
           Autoplay({
             delay: 5000

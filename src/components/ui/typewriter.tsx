@@ -47,7 +47,6 @@ const Typewriter = ({
   },
 }: TypewriterProps) => {
 
-  console.log(cursorClassName)
 
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -60,7 +59,6 @@ const Typewriter = ({
     let timeout: NodeJS.Timeout
 
     const currentText = texts[currentTextIndex]
-    console.log(currentText)
     const startTyping = () => {
 
       if (isDeleting) {
