@@ -23,7 +23,7 @@ const blog = defineCollection({
   }),
 })
 
-const projects = defineCollection({
+const projekte = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -33,6 +33,8 @@ const projects = defineCollection({
     draft: z.boolean().optional(),
     demoUrl: z.string().optional(),
     repoUrl: z.string().optional(),
+    extUrl: z.string().optional(),
+    image: z.string().optional()
   }),
 })
 
@@ -48,8 +50,10 @@ const pages = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    slug: z.string().optional(),
     description: z.string().optional(),
+    isFooterLink: z.boolean().optional(),
   }),
 })
 
-export const collections = { work, blog, projects, rechtliches, pages }
+export const collections = { work, blog, projekte, rechtliches, pages }

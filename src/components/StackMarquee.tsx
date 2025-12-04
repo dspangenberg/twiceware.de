@@ -61,7 +61,7 @@ export function StackMarquee () {
       {stack.map((s, index) => (
         <div
           key={index}
-          className="relative h-full w-fit mx-[4rem] flex items-center justify-start gap-2"
+          className="relative  w-fit mx-[4rem] flex items-center justify-start gap-2"
         >
           <div className="text-stone-400">
             <svg height={36} width={36} stroke="currentColor" strokeWidth={1}>

@@ -2,6 +2,7 @@
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
+@plugin "tailwindcss-react-aria-components";
 
 :root {
   --font-sans: "Radio Canada Variable", sans-serif;
@@ -150,7 +151,7 @@ div.legal a {
 }
 
 article p {
-  @apply text-xl md:text-2xl leading-relaxed;
+  @apply text-xl md:text-2xl leading-relaxed hyphens-auto;
 }
 
 #footnote-label {

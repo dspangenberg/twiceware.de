@@ -24,7 +24,7 @@ export async function GET(context: Context) {
       pubDate: item.data.date,
       link: item.slug.startsWith("blog")
         ? `/blog/${item.slug}/`
-        : `/projects/${item.slug}/`,
+        : `/projekte/${item.slug}/`,
     })),
   })
 }

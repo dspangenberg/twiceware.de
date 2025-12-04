@@ -2,7 +2,6 @@
 import Container from '@/components/Container.astro'
 import TextLogo from '@/components/TextLogo.astro'
 import FooterLink from '@/components/FooterLink.astro'
-import { Typewriter } from '@/components/ui/typewriter.tsx'
 ---
 
 <footer class="relative bg-stone-50 border-t border-stone-100">
@@ -21,7 +20,7 @@ import { Typewriter } from '@/components/ui/typewriter.tsx'
             <div class="flex-1 text-stone-500 text-center md:text-left">
               &copy; 2004-{new Date().getFullYear()} by Danny Spangenberg
             </div>
-            <ul class="divide-x divide-stone-400 justify-end items-center flex-1 text-stone-800 flex">
+            <ul class="divide-x divide-stone-400 justify-center lg:justify-end items-center flex-1 text-stone-800 flex">
               <FooterLink>
               <a href="/impressum" class="text-current no-underline hover:underline hover:text-black transition-colors duration-300 ease-in-out">
                 Impressum
@@ -60,7 +59,7 @@ import { Typewriter } from '@/components/ui/typewriter.tsx'
 
 </footer>
 
-<script defer src="https://umami.twiceware.cloud/script.js" data-website-id="97722d38-3f5b-4e84-9777-e64f8d004e0b"></script>
+<script is:inline defer src="https://umami.twiceware.cloud/script.js" data-website-id="97722d38-3f5b-4e84-9777-e64f8d004e0b"></script>
 
 <script is:inline>
 

@@ -50,15 +50,17 @@ export const LINKS: Links = [
   {
     TEXT: 'Blog',
     HREF: '/blog'
-  }
+  },
+  {
+    TEXT: "Projekte",
+    HREF: "/projects",
+  },
+
+
   /*
   {
     TEXT: "Referenzen",
     HREF: "/referebzen",
-  },
-  {
-    TEXT: "Projekte",
-    HREF: "/projekte",
   },
 
      */
