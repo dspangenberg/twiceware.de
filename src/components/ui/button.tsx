@@ -1,183 +1,52 @@
-import { cva, type VariantProps } from 'class-variance-authority'
-import { LoaderCircleIcon } from 'lucide-react'
-import { forwardRef, type JSX } from 'react'
-import {
-  Button as AriaButton,
-  type ButtonProps as AriaButtonProps,
-  composeRenderProps,
-  type TooltipProps
-} from 'react-aria-components'
-import { cn } from '@/lib/utils'
-import { Icon, type IconType } from './icon'
-import { Tooltip, TooltipTrigger } from './tooltip'
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
+
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  [
-    'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors pressed:ring-offset-2 pressed:ring-1',
-    /* Disabled */
-    'data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ',
-    /* Focus Visible */
-    'focus-visible:border-ring focus-visible:ring-ring/20 focus-visible:ring-[3px]',
-    'pressed:ring-[3px]',
-    /* Resets */
-    'focus-visible:outline-none ring-offset-1'
-  ],
+  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-colors outline-offset-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default:
-          'bg-primary text-primary-foreground data-[hovered]:bg-primary/90 pressed:ring-primary/50 pressed:ring-primary/50 focus-visible:ring-primary/20',
+        default: "bg-primary text-primary-foreground shadow-sm shadow-black/5 hover:bg-primary/90",
         destructive:
-          'bg-destructive text-destructive-foreground text-white data-[hovered]:bg-destructive/90 border pressed:ring-destructive/50 focus-visible:ring-destructive/20 focus-visible:border-destructive/20 ',
+          "bg-destructive text-destructive-foreground shadow-sm shadow-black/5 hover:bg-destructive/90",
         outline:
-          'border border-input bg-background  data-[hovered]:bg-accent data-[hovered]:text-accent-foreground focus-visible:ring-ring/20 pressed:ring-ring/50',
+          "border border-input bg-background shadow-sm shadow-black/5 hover:bg-accent hover:text-accent-foreground",
         secondary:
-          'bg-secondary/90 text-secondary-foreground border-transparent border focus-visible:border-input focus-visible:border data-[hovered]:bg-secondary/20 pressed:ring-ring/50',
-        ghost:
-          'hover:bg-accent hover:text-accent-foreground focus-visible:border border border-transparent focus-visible:border-input focus-visible:ring-ring/20 pressed:ring/50 text-sm',
-        link: 'text-primary underline-offset-4 data-[hovered]:underline',
-        'ghost-destructive':
-          'data-[hovered]:bg-accent data-[hovered]:text-destructive-foreground focus-visible:border border border-transparent focus-visible:border-input focus-visible:ring-ring/20 pressed:ring-ring/50 text-sm',
-        toolbar:
-          'data-[hovered]:bg-accent data-[hovered]:text-accent-foreground pressed:ring-ring/50 active:ring-ring/50 focus-visible:border focus-visible:border-primary focus-visible:ring-ring/20  text-sm',
-        'toolbar-default':
-          'border border-input bg-background  data-[hovered]:bg-accent data-[hovered]:text-accent-foreground focus-visible:ring-ring/20 pressed:ring-ring/50 text-sm'
+          "bg-secondary text-secondary-foreground shadow-sm shadow-black/5 hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: 'h-9 px-4 py-2',
-        sm: 'h-8 rounded-md px-3 text-xs',
-        lg: 'h-10 rounded-md px-8',
-        icon: 'size-9',
-        auto: 'h-9 w-auto py-2 px-2',
-        'icon-xs': 'size-6',
-        'icon-sm': 'size-7'
-      }
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-lg px-3 text-xs",
+        lg: "h-10 rounded-lg px-8",
+        icon: "h-9 w-9",
+      },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default'
-    }
-  }
-)
+      variant: "default",
+      size: "default",
+    },
+  },
+);
 
-export interface ButtonProps extends AriaButtonProps, VariantProps<typeof buttonVariants> {
-  isLoading?: boolean
-  disabled?: boolean
-  icon?: IconType
-  iconClassName?: string
-  slot?: string | null
-  title?: string
-  tooltip?: string
-  tooltipPlacement?: TooltipProps['placement']
-  forceTitle?: boolean
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
-  className,
-  disabled = false,
-  variant,
-  size,
-  form,
-  type = 'button',
-  isLoading = false,
-  icon,
-  iconClassName,
-  slot,
-  children,
-  title = '',
-  tooltip = '',
-  forceTitle = false,
-  tooltipPlacement = 'bottom',
-  ...props
-}, ref): JSX.Element => {
-  const ariaLabel = title || tooltip
-
-  if (variant === 'toolbar-default') {
-    size = 'auto'
-    forceTitle = true
-  }
-
-  if (variant === 'toolbar') {
-    tooltip = title
-    title = ''
-    size = 'icon'
-  }
-
-  if (!forceTitle && title && !tooltip && ['icon', 'icon-sm', 'icon-xs'].includes(size as string)) {
-    tooltip = title
-    title = ''
-  }
-
-  const iconSizeClass = {
-    auto: 'size-5',
-    default: 'size-5',
-    sm: 'size-5',
-    lg: 'size-5',
-    icon: 'size-5',
-    'icon-sm': 'size-4',
-    'icon-xs': 'size-3'
-  }[size || 'default']
-
-  const isToolbar = variant === 'toolbar' || variant === 'toolbar-default'
-
-  const buttonElement = (
-    <AriaButton
-      ref={ref}
-      form={form}
-      type={type}
-      slot={slot}
-      isDisabled={disabled || isLoading}
-      isPending={isLoading}
-      aria-label={ariaLabel}
-      className={composeRenderProps(className, className =>
-        cn(
-          'gap-2',
-          buttonVariants({
-            variant,
-            size
-          }),
-          className
-        )
-      )}
-      {...props}
-    >
-      {composeRenderProps(children, children => (
-        <div className={cn('flex gap-2', size === 'icon' ? 'mx-auto' : '')}>
-          {!isLoading ? (
-            icon && (
-              <Icon
-                aria-label={title || tooltip}
-                icon={icon}
-                className={cn(
-                  disabled ? 'text-muted-foreground' : '',
-                  iconSizeClass,
-                  iconClassName
-                )}
-              />
-            )
-          ) : (
-            <LoaderCircleIcon className={cn('animate-spin', iconSizeClass)} />
-          )}
-          {(title || children) && variant !== 'toolbar' && (
-            <div className={cn(isToolbar ? 'hidden md:flex' : '')}>{title || children}</div>
-          )}
-        </div>
-      ))}
-    </AriaButton>
-  )
-
-  if (tooltip) {
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
     return (
-      <TooltipTrigger>
-        {buttonElement}
-        <Tooltip placement={tooltipPlacement}>{tooltip}</Tooltip>
-      </TooltipTrigger>
-    )
-  }
+      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+    );
+  },
+);
+Button.displayName = "Button";
 
-  return buttonElement
-})
-
-Button.displayName = 'Button'
-
-export { buttonVariants }
+export { Button, buttonVariants };

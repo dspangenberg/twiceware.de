@@ -4,29 +4,21 @@ import ProjectCard from '@/components/ProjectCard.tsx'
 import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 import type { Page } from 'astro'
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-} from '@/components/ui/pagination'
+
 type Props = {
   projects: CollectionEntry<'projekte'>[]
   page: Page<CollectionEntry<'projekte'>>
   title?: string
 }
 
-const {
-  projects,
-  page,
-  title
-} = Astro.props
+const { projects, page, title } = Astro.props
 
 const allProjects = (await getCollection('projekte'))
   .filter(project => !project.data.draft)
 
 const categories = [...new Set(allProjects.flatMap(project => project.data.category || []))]
 const tags = [...new Set(allProjects.flatMap(project => project.data.tags || []))]
+
 ---
 <PageLayout title="Referenzen" description="Referenzen" hideHeader>
 
@@ -61,29 +53,56 @@ const tags = [...new Set(allProjects.flatMap(project => project.data.tags || [])
         </ul>
       </div>
     </div>
-    <div class="flex-1 animate mb-12">
+    <div class="flex-1 animate">
       <div class="flex flex-col">
         <h1 class="text-4xl font-bold mb-12">Referenzen {title}</h1>
-        <ul class="flex flex-col gap-y-12">
+        <ul class="flex flex-col gap-y-6">
           {projects.map((project) => (
             <li>
-              <ProjectCard entry={project} />
+              <ProjectCard entry={project}  />
             </li>
           ))}
         </ul>
 
-        {page.total > 5 && <Pagination className="mt-12">
-          <PaginationContent>
+        {/* Pagination */}
+        <nav class="flex justify-center items-center gap-2 mt-12" aria-label="Pagination">
+          {page.url.prev && (
+            <a
+              href={page.url.prev}
+              class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+              aria-label="Vorherige Seite"
+            >
+              ← Zurück
+            </a>
+          )}
+
+          <div class="flex gap-1">
             {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((pageNum) => (
-              <PaginationItem>
-                <PaginationLink href={`/projekte/${pageNum}`} isActive={pageNum === page.currentPage} size="default">
-                  {pageNum}
-                </PaginationLink>
-              </PaginationItem>
+              <a
+                href={page.url.current.replace(/\/\d+$/, `/${pageNum}`)}
+                class={`px-3 py-2 border rounded transition-colors ${
+                  pageNum === page.currentPage
+                    ? 'bg-black text-white border-black'
+                    : 'border-gray-300 hover:bg-gray-100'
+                }`}
+                aria-label={`Seite ${pageNum}`}
+                aria-current={pageNum === page.currentPage ? 'page' : undefined}
+              >
+                {pageNum}
+              </a>
             ))}
-          </PaginationContent>
-        </Pagination>
-        }
+          </div>
+
+          {page.url.next && (
+            <a
+              href={page.url.next}
+              class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+              aria-label="Nächste Seite"
+            >
+              Weiter →
+            </a>
+          )}
+        </nav>
       </div>
     </div>
   </div>

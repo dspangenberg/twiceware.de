@@ -17,7 +17,7 @@ export default function ProjectCard ({
     <a href={url} target={target}
        className="group  gap-3 flex items-center border border-stone-200 hover:bg-stone-50 hover:border-stone-300 rounded-lg transition-colors duration-300 ease-in-out"
     >
-      <div className="w-full group-hover:text-black blend p-2">
+      <div className="w-full group-hover:text-black blend p-1">
         {entry.data.image && <img src={entry.data.image} className="w-full rounded-lg border aspect-[16/9] object-cover"  alt={entry.data.title} />}
         <div className="p-4">
 
