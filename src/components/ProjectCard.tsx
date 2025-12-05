@@ -6,7 +6,7 @@ type Props = {
   pill?: boolean
 }
 
-export default function ArrowCard ({
+export default function ProjectCard ({
   entry,
   pill
 }: Props) {
@@ -15,10 +15,10 @@ export default function ArrowCard ({
 
   return (
     <a href={url} target={target}
-       className="group  gap-3 flex items-center border border-stone-200 hover:bg-stone-50 rounded-lg transition-colors duration-300 ease-in-out"
+       className="group  gap-3 flex items-center border border-stone-200 hover:bg-stone-50 hover:border-stone-300 rounded-lg transition-colors duration-300 ease-in-out"
     >
       <div className="w-full group-hover:text-black blend p-2">
-        {entry.data.image && <img src={entry.data.image} className="w-full rounded-lg border"  alt={entry.data.title} />}
+        {entry.data.image && <img src={entry.data.image} className="w-full rounded-lg border aspect-[16/9] object-cover"  alt={entry.data.title} />}
         <div className="p-4">
 
           <div className="font-semibold text-xl mt-3 text-black">
@@ -26,8 +26,8 @@ export default function ArrowCard ({
           </div>
 
           <ul className="flex flex-wrap mt-2 gap-1">
-            {entry.data.tags.map((tag: string) => ( // this line has an error; Parameter 'tag' implicitly has an 'any' type.ts(7006)
-              <li className="text-xs uppercase py-0.5 px-1.5 rounded-md bg-stone-200 text-black/75">
+            {entry.data.tags.map((tag: string) => (
+              <li key={tag} className="text-xs uppercase border border-stone-200 py-0.5 px-1.5 rounded-md bg-blue-50 text-black/75">
                 {tag}
               </li>
             ))}

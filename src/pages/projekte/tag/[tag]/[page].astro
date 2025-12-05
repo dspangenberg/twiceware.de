@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content'
+import type { GetStaticPaths, Page } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import PageLayout from '@/layouts/PageLayout.astro'
+import TopLayout from '@/layouts/TopLayout.astro'
+import BottomLayout from '@/layouts/BottomLayout.astro'
+import Projects from '@/components/Projects'
+import { PROJECTS } from '@/consts'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allProjects = (await getCollection('projekte'))
+    .filter(project => !project.data.draft)
+    .sort((a, b) => {
+      // Featured projects first
+      if (a.data.featured && !b.data.featured) return -1
+      if (!a.data.featured && b.data.featured) return 1
+      // Then sort by date
+      return b.data.date.getTime() - a.data.date.getTime()
+    })
+
+  // Get all unique tags
+  const tags = [...new Set(allProjects.flatMap(project => project.data.tags || []))]
+
+  // Create paginated routes for each tag
+  return tags.flatMap(tag => {
+    const filteredProjects = allProjects.filter(project =>
+      project.data.tags?.includes(tag)
+    )
+    return paginate(filteredProjects, {
+      params: { tag },
+      pageSize: 5
+    })
+  })
+}) satisfies GetStaticPaths
+
+type Props = {
+  page: Page<CollectionEntry<'projekte'>>
+}
+const tag = Astro.params.tag
+const { page } = Astro.props
+const projects = page.data
+
+const allProjects = (await getCollection('projekte'))
+  .filter(project => !project.data.draft)
+
+const tags = [...new Set(allProjects.flatMap(project => project.data.tags))]
+  .sort((a, b) => a.localeCompare(b))
+
+const categories = [...new Set(allProjects.flatMap(project => project.data.category))]
+  .sort((a, b) => a.localeCompare(b))
+
+---
+
+<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+  <BottomLayout>
+    <div class="pt-36 pb-6">
+      <Projects client:load page={page} tags={tags} data={projects} categories={categories} title={`mit dem Tag ${tag}`}/>
+
+      <div class="mt-8 flex justify-center gap-2">
+        {page.url.prev && (
+          <a href={page.url.prev} class="px-4 py-2 border rounded hover:bg-black/5 transition-colors">
+            ← Vorherige
+          </a>
+        )}
+        <span class="px-4 py-2">
+          Seite {page.currentPage} von {page.lastPage}
+        </span>
+        {page.url.next && (
+          <a href={page.url.next} class="px-4 py-2 border rounded hover:bg-black/5 transition-colors">
+            Nächste →
+          </a>
+        )}
+      </div>
+    </div>
+  </BottomLayout>
+</PageLayout>

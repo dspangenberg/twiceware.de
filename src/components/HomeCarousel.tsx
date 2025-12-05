@@ -7,24 +7,22 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel'
 import { cn } from '@/lib/utils'
+import type { CollectionEntry } from 'astro:content'
 
-interface Slide {
-  src: string
-  alt: string
-  title: string
-  url: string
+interface Props {
+  projects: CollectionEntry<'projekte'>[]
 }
 
+export function HomeCarousel({ projects }: Props) {
 
-export function HomeCarousel() {
-  const slides: Slide[] = [
-    { src: '/beleg-portal.png', alt: 'Belegportal', title: 'Belegportal für eine Anwaltskanzlei', url: '/projekte/belegportal' },
-    { src: '/opsc2.png', alt: 'ELGA GmbH', title: 'OPSC, das interne CRM' , url: '/projekte/opsc' },
-    { src: '/gnadtec.png', alt: 'gnadTec GmbH', title: 'Website der gnadtec GmbH' , url: 'https://www.gnadtec.de' },
-    { src: '/mtg.png', alt: 'ELGA GmbH', title: 'Website von Matthias Gerschwitz' , url: 'https://matthias-gerschwitz.de/' },
-    { src: '/elga-gmbh.png', alt: 'Website der ELGA GmbH', title: 'Website der ELGA GmbH' , url: 'https://www.elga-gmbh.de/' },
-    { src: '/akr.png', alt: 'autokaufrecht.info', title: 'Der Autokaufrecht-Blog' , url: 'https://autokaufrecht.info/' }
-  ]
+  const getProject = (index: number) => projects[index]
+  const getUrl = (index: number): string => {
+    const project = getProject(index)
+    return project.data.extUrl || `/projekte/${project.slug}`
+  }
+  const getTarget = (index: number): string => {
+    return getUrl(index)?.startsWith('http') ? '_blank' : '_self'
+  }
 
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
@@ -34,10 +32,10 @@ export function HomeCarousel() {
       return
     }
 
-    setCurrent(api.selectedScrollSnap() + 1)
+    setCurrent(api.selectedScrollSnap())
 
     api.on('select', () => {
-      setCurrent(api.selectedScrollSnap() + 1)
+      setCurrent(api.selectedScrollSnap())
     })
   }, [api])
 
@@ -54,11 +52,11 @@ export function HomeCarousel() {
         setApi={setApi}
       >
         <CarouselContent>
-          {slides.map((slide, index) => (
+          {projects.map((project, index) => (
             <CarouselItem key={index}>
               <img
-                src={slide.src}
-                alt={slide.alt}
+                src={project.data.image}
+                alt={project.data.title}
                 className="aspect-[16/9] w-full rounded-xl"
               />
             </CarouselItem>
@@ -67,10 +65,10 @@ export function HomeCarousel() {
         </CarouselContent>
       </Carousel>
       <div className="gap-1 mt-5">
-        <a className="hover:underline flex flex-center justify-center gap-1" href={slides[current - 1]?.url}
-           target={slides[current - 1]?.url?.includes('http') ? '_blank' : '_self'}
+        <a className="hover:underline flex flex-center justify-center gap-1" href={getUrl(current)}
+           target={getTarget(current)}
         >
-          <h3 className="text-center text-xl font-semibold">{slides[current - 1]?.title}</h3>
+          <h3 className="text-center text-xl font-semibold">{projects[current]?.data.title}</h3>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
                className="lucide lucide-external-link-icon lucide-external-link size-5 pt-1"
@@ -81,13 +79,13 @@ export function HomeCarousel() {
           </svg>
         </a>
         <div className="mt-2.5 flex items-center justify-center gap-2 px-4">
-          {Array.from({ length: slides.length }).map((_, index) => (
+          {Array.from({ length: projects.length }).map((_, index) => (
             <button
               key={index}
               type="button"
               onClick={() => api?.scrollTo(index)}
               className={cn('h-3.5 w-3.5 rounded-full border-2 cursor-pointer border-black/20', {
-                '!border-blue-600': current === index + 1
+                '!border-blue-600': current === index
             })}
           />
         ))}

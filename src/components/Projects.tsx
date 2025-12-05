@@ -1,15 +1,21 @@
 import type { CollectionEntry } from 'astro:content'
 import { useEffect, useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
-import { cn } from '@/lib/utils'
+import type { Page } from 'astro'
 
 type Props = {
   tags: string[]
+  categories: string[]
   data: CollectionEntry<'projekte'>[]
+  title?: string
+  page: Page
 }
 
 export default function Projects ({
+  categories,
   data,
+  title,
+  page,
   tags
 }: Props) {
   const [filter, setFilter] = useState(new Set<string>())
@@ -17,6 +23,7 @@ export default function Projects ({
 
   useEffect(() => {
     setProjects(data.filter((entry) =>
+      !entry.data.draft &&
       Array.from(filter).every((value) =>
         entry.data.tags.some((tag: string) =>
           tag.toLowerCase() === String(value).toLowerCase()
@@ -25,48 +32,53 @@ export default function Projects ({
     ))
   }, [filter])
 
-  function toggleTag (tag: string) {
-    setFilter((prev) =>
-      new Set(prev.has(tag)
-        ? [...prev].filter((t) => t !== tag)
-        : [...prev, tag]
-      )
-    )
-  }
+
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <div className="col-span-3 sm:col-span-1">
-        <div className="sticky top-24">
-          <div className="text-sm font-semibold uppercase mb-2 text-black">Filter</div>
+
+    <div className="flex gap-6 flex-wrap">
+      <div className="flex-none w-64">
+        <div className="sticky top-56 pt-20 space-y-6">
+          <ul>
+            <li>
+              <a href="/projekte/1">Alle Referenzen</a>
+            </li>
+          </ul>
+
+          <div className="text-sm font-semibold uppercase mb-2 text-black">Kategorien</div>
+          <ul className="flex flex-wrap sm:flex-col">
+            {categories.map((category) => (
+              <li key={category}>
+                <a href={`/projekte/kategorie/${category}/1`}>
+                  {category}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="text-sm font-semibold uppercase mb-2 text-black">Tags</div>
           <ul className="flex flex-wrap sm:flex-col">
             {tags.map((tag) => (
               <li key={tag}>
-                <button onClick={() => toggleTag(tag)}
-                        className={cn('w-full px-2 py-1 rounded', 'whitespace-nowrap overflow-hidden overflow-ellipsis', 'flex gap-2 items-center', 'bg-black/5', 'hover:bg-black/10', 'transition-colors duration-300 ease-in-out', filter.has(tag) && 'text-black')}
-                >
-                  <svg
-                    className={cn('size-5 fill-black/50', 'transition-colors duration-300 ease-in-out', filter.has(tag) && 'fill-black')}
-                  >
-                    <use href={`/ui.svg#square`} className={cn(!filter.has(tag) ? 'block' : 'hidden')} />
-                    <use href={`/ui.svg#square-check`} className={cn(filter.has(tag) ? 'block' : 'hidden')} />
-                  </svg>
+                <a href={`/projekte/tag/${tag}/1`}>
                   {tag}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="col-span-3 sm:col-span-2 mb-6">
+      <div className="flex-1 animate">
         <div className="flex flex-col">
+          <div className="animate page-heading">
+            Referenzen {title}
+          </div>
           <div className="text-sm uppercase mb-2">
-            {projects.length} von {data.length} Projekte
+            {page.total} von {data.length} Projekte
           </div>
           <ul className="flex flex-col gap-y-6">
             {projects.map((project) => (
               <li key={project.slug}>
-                <ProjectCard entry={project} />
+                <ProjectCard entry={project} key={project.slug} />
               </li>
             ))}
           </ul>

@@ -9,17 +9,9 @@ import Container from '@/components/Container.astro'
 import { Typewriter } from "@/components/ui/typewriter"
 import { StackMarquee } from '@/components/StackMarquee.tsx'
 
-const posts = (await getCollection('blog'))
-  .filter(post => !post.data.draft)
+const featuredProjects = (await getCollection('projekte'))
+  .filter(project => !!project.data.featured)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3)
-
-console.log(posts)
-
-const projects = (await getCollection('projects'))
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3)
 
 ---
 
@@ -31,7 +23,7 @@ const projects = (await getCollection('projects'))
 
       <div class="flex  flex-col gap-24">
 
-       <HomeCarousel client:only="react" />
+       <HomeCarousel client:only="react" projects={featuredProjects} />
 
         <div class="flex flex-col text-center">
         <h1 class="text-2xl font-semibold">Sprachen, Frameworks und Kinks &#128586;</h1>

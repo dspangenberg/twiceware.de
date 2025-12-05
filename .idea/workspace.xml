@@ -5,21 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CloseIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GithubIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HamburgerIcon.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/projekte/autokaufrecht-info/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/projekte/gnadtec-de/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/projekte/matthias-gerschwitz-de/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/content/projekte/opsc/index.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Drawer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drawer.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeCarousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/pages/datenschutz.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/pages/datenschutz.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/pages/impressum.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/pages/impressum.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/gnadtec/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/elga-gmbh-de/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/project-3/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/project-4/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/projekte/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/index.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +68,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -73,7 +80,7 @@
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/src/components&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/src/pages/projekte&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,11 +103,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/projekte" />
+      <recent name="$PROJECT_DIR$/src/pages/projekte/category/[category]" />
+      <recent name="$PROJECT_DIR$/src/content/projekte" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/content" />
-      <recent name="$PROJECT_DIR$/src/pages" />
-      <recent name="$PROJECT_DIR$/src/content/blog" />
-      <recent name="$PROJECT_DIR$/src/content/legal" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/content/pages" />
@@ -144,6 +151,8 @@
       <workItem from="1764794217168" duration="23848000" />
       <workItem from="1764847373072" duration="8000" />
       <workItem from="1764866192016" duration="2856000" />
+      <workItem from="1764869221972" duration="29091000" />
+      <workItem from="1764899911716" duration="463000" />
     </task>
     <servers />
   </component>

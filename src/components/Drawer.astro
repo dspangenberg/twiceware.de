@@ -13,11 +13,11 @@ const blogIndex = {
   slug: 'blog'
 }
 const projectsIndex = {
-  data: { title: 'Projekte + Referenzen' },
+  data: { title: 'Referenzen' },
   slug: 'projekte'
 }
 
-const allContent = [...pages, blogIndex, projectsIndex]
+const allContent = [...pages, projectsIndex, blogIndex]
 
 console.log('Seiten', allContent.map(item => ({
   ...item.data,

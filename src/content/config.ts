@@ -1,5 +1,4 @@
 import { defineCollection, z } from "astro:content"
-import { glob } from 'astro/loaders';
 
 const work = defineCollection({
   type: "content",
@@ -34,7 +33,9 @@ const projekte = defineCollection({
     demoUrl: z.string().optional(),
     repoUrl: z.string().optional(),
     extUrl: z.string().optional(),
-    image: z.string().optional()
+    image: z.string().optional(),
+    featured: z.boolean().optional(),
+    category: z.string()
   }),
 })
 
