@@ -3,7 +3,7 @@ title: "V2R Teil 1– Lifecycle Hooks, Computed Properties und Watcher"
 summary: "Zumindest wenn es um React Functional Components geht, wirst Du um useEffect nicht herum kommen, wenn Du Lifecycle Hooks, Computed Properties und Watcher
 benötigst."
 date: "Jan 21 2025"
-draft: false
+draft: true
 tags:
 - Tutorial
 - Vue.js

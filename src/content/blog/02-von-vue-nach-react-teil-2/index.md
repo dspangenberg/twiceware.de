@@ -2,7 +2,7 @@
 title: "V2R Teil 2– Emits, wo sind die Emits?"
 summary: "Unsere Childkomponenten möchte aus dem Smäland abgeholt werden. Aber wie zum Emit?"
 date: "Jan 21 2025"
-draft: false
+draft: true
 tags:
 - Tutorial
 - Vue.js
