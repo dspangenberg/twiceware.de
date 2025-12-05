@@ -15,16 +15,7 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))]
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
-  <TopLayout>
-    <div class="animate page-heading">
-      {BLOG.TITLE}
-    </div>
-  </TopLayout>
-  <BottomLayout>
-    <div class="animate">
-      <Blog client:load tags={tags} data={posts} />
-    </div>
-  </BottomLayout>
+  HI
 </PageLayout>
 
 

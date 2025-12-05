@@ -2,7 +2,7 @@
 title: "Von Vue.js zu ReactJS (V2R) – Einführung"
 summary: "Ich nutze Vue.js seit der 0.8.X und so sehr ich Vue auch liebe, und sich in der Hinsicht viel getan hat, ist die Auswahl gerade in puncto UI-Komponenten begrenzt. In meinem neuen Projekt möchte ich gerne die Möglichkeiten nutzen, die uns shadcn/ui eröffnet."
 date: "Jan 20 2025"
-draft: true
+draft: false
 tags:
 - Vue.js
 - Pinia
