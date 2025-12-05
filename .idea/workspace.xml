@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/content/projekte/autokaufrecht-info/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/projekte/gnadtec-de/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/projekte/matthias-gerschwitz-de/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/projekte/opsc/index.mdx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Drawer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Drawer.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeCarousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeCarousel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/layouts/ProjectsLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BaseHead.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseHead.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/projekte/gnadtec/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/elga-gmbh-de/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/projekte/project-3/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/projekte/project-4/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/PageLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/PageLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/[...slug].astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/projekte/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/projekte/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/[page].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +98,7 @@
       <recent name="$PROJECT_DIR$/src/content" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/content/projekte" />
       <recent name="$PROJECT_DIR$/src/content/pages" />
     </key>
   </component>
@@ -153,6 +142,7 @@
       <workItem from="1764866192016" duration="2856000" />
       <workItem from="1764869221972" duration="29091000" />
       <workItem from="1764899911716" duration="463000" />
+      <workItem from="1764900393608" duration="4708000" />
     </task>
     <servers />
   </component>

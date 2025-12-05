@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { LoaderCircleIcon } from 'lucide-react'
-import type { JSX } from 'react'
+import { forwardRef, type JSX } from 'react'
 import {
   Button as AriaButton,
   type ButtonProps as AriaButtonProps,
@@ -72,7 +72,7 @@ export interface ButtonProps extends AriaButtonProps, VariantProps<typeof button
   forceTitle?: boolean
 }
 
-export const Button = ({
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   className,
   disabled = false,
   variant,
@@ -89,7 +89,7 @@ export const Button = ({
   forceTitle = false,
   tooltipPlacement = 'bottom',
   ...props
-}: ButtonProps): JSX.Element => {
+}, ref): JSX.Element => {
   const ariaLabel = title || tooltip
 
   if (variant === 'toolbar-default') {
@@ -122,6 +122,7 @@ export const Button = ({
 
   const buttonElement = (
     <AriaButton
+      ref={ref}
       form={form}
       type={type}
       slot={slot}
@@ -175,6 +176,8 @@ export const Button = ({
   }
 
   return buttonElement
-}
+})
+
+Button.displayName = 'Button'
 
 export { buttonVariants }

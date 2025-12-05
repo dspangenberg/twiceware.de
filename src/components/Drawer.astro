@@ -19,11 +19,6 @@ const projectsIndex = {
 
 const allContent = [...pages, projectsIndex, blogIndex]
 
-console.log('Seiten', allContent.map(item => ({
-  ...item.data,
-  slug: item.slug
-})))
-
 
 const currentPath = Astro.url.pathname
 

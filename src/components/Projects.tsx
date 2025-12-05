@@ -69,9 +69,6 @@ export default function Projects ({
       </div>
       <div className="flex-1 animate">
         <div className="flex flex-col">
-          <div className="animate page-heading">
-            Referenzen {title}
-          </div>
           <div className="text-sm uppercase mb-2">
             {page.total} von {data.length} Projekte
           </div>

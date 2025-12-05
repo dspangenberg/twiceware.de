@@ -1,0 +1,109 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro'
+import ProjectCard from '@/components/ProjectCard.tsx'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import type { Page } from 'astro'
+
+type Props = {
+  projects: CollectionEntry<'projekte'>[]
+  page: Page<CollectionEntry<'projekte'>>
+  title?: string
+}
+
+const { projects, page, title } = Astro.props
+
+const allProjects = (await getCollection('projekte'))
+  .filter(project => !project.data.draft)
+
+const categories = [...new Set(allProjects.flatMap(project => project.data.category || []))]
+const tags = [...new Set(allProjects.flatMap(project => project.data.tags || []))]
+
+---
+<PageLayout title="Referenzen" description="Referenzen" hideHeader>
+
+  <div class="flex gap-6 flex-wrap xl:flex-nowrap">
+    <div class="flex-none w-64" transition:persist="sidebar">
+      <div class="sticky top-56 space-y-6">
+        <ul>
+          <li>
+            <a href="/projekte/1">Alle Referenzen</a>
+          </li>
+        </ul>
+
+        <div class="text-sm font-semibold uppercase mb-2 text-black">Kategorien</div>
+        <ul class="flex flex-wrap sm:flex-col">
+          {categories.map((category) => (
+            <li>
+              <a href={`/projekte/kategorie/${category}/1`}>
+                {category}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="text-sm font-semibold uppercase mb-2 text-black">Tags</div>
+        <ul class="flex flex-wrap sm:flex-col">
+          {tags.map((tag) => (
+            <li>
+              <a href={`/projekte/tag/${tag}/1`}>
+                {tag}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="flex-1 animate">
+      <div class="flex flex-col">
+        <h1 class="text-4xl font-bold mb-12">Referenzen {title}</h1>
+        <ul class="flex flex-col gap-y-6">
+          {projects.map((project) => (
+            <li>
+              <ProjectCard entry={project}  />
+            </li>
+          ))}
+        </ul>
+
+        {/* Pagination */}
+        <nav class="flex justify-center items-center gap-2 mt-12" aria-label="Pagination">
+          {page.url.prev && (
+            <a
+              href={page.url.prev}
+              class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+              aria-label="Vorherige Seite"
+            >
+              ← Zurück
+            </a>
+          )}
+
+          <div class="flex gap-1">
+            {Array.from({ length: page.lastPage }, (_, i) => i + 1).map((pageNum) => (
+              <a
+                href={page.url.current.replace(/\/\d+$/, `/${pageNum}`)}
+                class={`px-3 py-2 border rounded transition-colors ${
+                  pageNum === page.currentPage
+                    ? 'bg-black text-white border-black'
+                    : 'border-gray-300 hover:bg-gray-100'
+                }`}
+                aria-label={`Seite ${pageNum}`}
+                aria-current={pageNum === page.currentPage ? 'page' : undefined}
+              >
+                {pageNum}
+              </a>
+            ))}
+          </div>
+
+          {page.url.next && (
+            <a
+              href={page.url.next}
+              class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+              aria-label="Nächste Seite"
+            >
+              Weiter →
+            </a>
+          )}
+        </nav>
+      </div>
+    </div>
+  </div>
+</PageLayout>

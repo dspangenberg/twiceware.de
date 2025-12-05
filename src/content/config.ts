@@ -51,7 +51,6 @@ const pages = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    slug: z.string().optional(),
     description: z.string().optional(),
     isFooterLink: z.boolean().optional(),
   }),
