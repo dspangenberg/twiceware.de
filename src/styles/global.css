@@ -166,3 +166,7 @@ article p {
     @apply bg-white text-black;
   }
 }
+
+h2 {
+  @apply text-2xl lg:text-3xl font-semibold;
+}

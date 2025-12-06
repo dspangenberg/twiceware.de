@@ -4,6 +4,7 @@ import PageLayout from "@/layouts/PageLayout.astro"
 import TopLayout from "@/layouts/TopLayout.astro"
 import BottomLayout from "@/layouts/BottomLayout.astro"
 import { SITE } from "@/consts"
+import type { BreadcrumbProp } from '@/types.ts'
 
 // Create the static pages for legal docs and general pages
 export async function getStaticPaths() {
@@ -29,9 +30,15 @@ const doc = Astro.props
 const { title } = doc.data
 const { Content } = await doc.render();
 
+const breadcrumbs: BreadcrumbProp[] = [
+  {
+    title: title,
+    href: ''
+  }
+]
 ---
 
-<PageLayout title={title} description={`${title} for ${SITE.TITLE}`}>
+<PageLayout title={title} description={`${title} for ${SITE.TITLE}`} breadcrumbs={breadcrumbs}>
     <article class="animate">
       <Content />
     </article>

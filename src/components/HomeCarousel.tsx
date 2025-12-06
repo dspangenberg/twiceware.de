@@ -43,7 +43,7 @@ export function HomeCarousel ({ projects }: Props) {
     <div className="relative">
 
       <Carousel
-        className="w-full max-w-sm rounded-xl shadow-xl mx-auto border xl:max-w-4xl 2xl:max-w-7xl"
+        className="w-full max-w-sm rounded-xl shadow-xl mx-auto border md:max-w-xl lg:max-w-4xl 2xl:max-w-7xl"
         plugins={[
           Autoplay({
             delay: 5000
