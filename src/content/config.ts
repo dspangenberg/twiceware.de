@@ -35,6 +35,7 @@ const projekte = defineCollection({
     extUrl: z.string().optional(),
     image: z.string().optional(),
     featured: z.boolean().optional(),
+    homeFeatured: z.boolean().optional(),
     category: z.string()
   }),
 })

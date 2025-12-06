@@ -4,12 +4,14 @@ import ProjectCard from '@/components/ProjectCard.tsx'
 import { getCollection } from 'astro:content'
 import type { CollectionEntry } from 'astro:content'
 import type { Page } from 'astro'
+
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationLink,
 } from '@/components/ui/pagination'
+import { getProjects, getCategoriesForProjects, getTagsForProjects } from '@/lib/data.ts'
 type Props = {
   projects: CollectionEntry<'projekte'>[]
   page: Page<CollectionEntry<'projekte'>>
@@ -17,16 +19,13 @@ type Props = {
 }
 
 const {
-  projects,
   page,
+  projects,
   title
 } = Astro.props
 
-const allProjects = (await getCollection('projekte'))
-  .filter(project => !project.data.draft)
-
-const categories = [...new Set(allProjects.flatMap(project => project.data.category || []))]
-const tags = [...new Set(allProjects.flatMap(project => project.data.tags || []))]
+const categories = await getCategoriesForProjects()
+const tags = await getTagsForProjects()
 ---
 <PageLayout title="Referenzen" description="Referenzen" hideHeader>
   <div class="flex gap-6 flex-wrap xl:flex-nowrap">

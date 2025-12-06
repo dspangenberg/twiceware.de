@@ -6,22 +6,14 @@ import BottomLayout from "@/layouts/BottomLayout.astro"
 import { SITE } from "@/consts"
 import type { BreadcrumbProp } from '@/types.ts'
 
-// Create the static pages for legal docs and general pages
 export async function getStaticPaths() {
-	const rechtliches = await getCollection("rechtliches")
 	const pages = await getCollection("pages")
 
-	const rechtlichesPaths = rechtliches.map((doc) => ({
-		params: { slug: doc.slug },
-		props: doc,
-	}))
 
-	const pagesPaths = pages.map((doc) => ({
-		params: { slug: doc.slug },
-		props: doc,
-	}))
-
-	return [...rechtlichesPaths, ...pagesPaths]
+  return pages.map((doc) => ({
+    params: { slug: doc.slug },
+    props: doc,
+  }))
 }
 
 // Get the requested doc

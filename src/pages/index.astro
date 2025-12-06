@@ -2,17 +2,14 @@
 import { getCollection } from 'astro:content'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { SITE, } from '@/consts'
-import PageLayout from '@/layouts/PageLayout.astro'
-
 import * as React from 'react'
 import Container from '@/components/Container.astro'
 import { Typewriter } from "@/components/ui/typewriter"
 import { StackMarquee } from '@/components/StackMarquee.tsx'
 import HomeLayout from '@/layouts/HomeLayout.astro'
+import { getProjectsForHomepage } from '@/lib/data.ts'
 
-const featuredProjects = (await getCollection('projekte'))
-  .filter(project => !!project.data.featured)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+const featuredProjects = (await getProjectsForHomepage())
 
 ---
 

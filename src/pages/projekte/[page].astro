@@ -1,20 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import ProjectsLayout from '@/layouts/ProjectsLayout.astro'
+import { getProjects } from '@/lib/data.ts'
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allProjects = (await getCollection('projekte'))
-    .filter(project => !project.data.draft)
-    .sort((a, b) => {
-      // Featured projects first
-      if (a.data.featured && !b.data.featured) return -1
-      if (!a.data.featured && b.data.featured) return 1
-      // Then sort by date
-      return b.data.date.getTime() - a.data.date.getTime()
-    })
-
+  const allProjects = await getProjects()
   return paginate(allProjects, { pageSize: 5 })
 }) satisfies GetStaticPaths
 
@@ -24,9 +15,6 @@ type Props = {
 
 const { page } = Astro.props
 const projects = page.data
-
-
-
 ---
 
 <ProjectsLayout projects={projects} page={page}  />

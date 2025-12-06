@@ -1,33 +1,25 @@
 ---
-import { getCollection } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import ProjectsLayout from '@/layouts/ProjectsLayout.astro'
+import { getCategoriesForProjects, getProjectsByCategory } from '@/lib/data.ts'
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allProjects = (await getCollection('projekte'))
-    .filter(project => !project.data.draft)
-    .sort((a, b) => {
-      // Featured projects first
-      if (a.data.featured && !b.data.featured) return -1
-      if (!a.data.featured && b.data.featured) return 1
-      // Then sort by date
-      return b.data.date.getTime() - a.data.date.getTime()
-    })
-
   // Get all unique categories
-  const categories = [...new Set(allProjects.flatMap(project => project.data.category || []))]
+  const categories = await getCategoriesForProjects()
 
   // Create paginated routes for each category
-  return categories.flatMap(category => {
-    const filteredProjects = allProjects.filter(project =>
-      project.data.category?.includes(category)
-    )
-    return paginate(filteredProjects, {
-      params: { category },
-      pageSize: 5
+  const paths = await Promise.all(
+    categories.map(async category => {
+      const filteredProjects = await getProjectsByCategory(category)
+      return paginate(filteredProjects, {
+        params: { category },
+        pageSize: 5
+      })
     })
-  })
+  )
+
+  return paths.flat()
 }) satisfies GetStaticPaths
 
 type Props = {
