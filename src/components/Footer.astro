@@ -2,6 +2,15 @@
 import Container from '@/components/Container.astro'
 import TextLogo from '@/components/TextLogo.astro'
 import FooterLink from '@/components/FooterLink.astro'
+import { getCollection } from 'astro:content'
+
+const pages = (await getCollection('pages'))
+const projectsIndex = {
+  data: { title: 'Referenzen' },
+  slug: 'projekte/1'
+}
+
+const allPages = [...pages, projectsIndex]
 ---
 
 <footer class="relative bg-stone-50 border-t border-stone-100">

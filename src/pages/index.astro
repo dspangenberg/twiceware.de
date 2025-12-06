@@ -8,6 +8,7 @@ import * as React from 'react'
 import Container from '@/components/Container.astro'
 import { Typewriter } from "@/components/ui/typewriter"
 import { StackMarquee } from '@/components/StackMarquee.tsx'
+import HomeLayout from '@/layouts/HomeLayout.astro'
 
 const featuredProjects = (await getCollection('projekte'))
   .filter(project => !!project.data.featured)
@@ -15,16 +16,16 @@ const featuredProjects = (await getCollection('projekte'))
 
 ---
 
-<PageLayout title="Startseite" description={SITE.DESCRIPTION} hideHeader>
+<HomeLayout title="Startseite" description={SITE.DESCRIPTION} hideHeader>
 
 
-  <section class="relative my-24 w-full  flex items-center justify-center bg-white">
+  <section class="relative my-24 w-full h-full flex items-center justify-center bg-white py-12">
     <Container size="xl">
 
       <div class="flex  flex-col space-y-24">
 
         <div class="mx-auto md:text-4xl lg:text-5xl sm:text-3xl text-2xl flex flex-row items-start justify-start bg-background font-normal overflow-hidden">
-          <p class="whitespace-pre-wrap leading-normal text-center">
+          <p class="whitespace-pre-wrap text-center leading-tight">
             <span>Ich bin <b>Danny</b>,<br/> </span>
             <Typewriter
               client:only="react"
@@ -35,7 +36,7 @@ const featuredProjects = (await getCollection('projekte'))
                 "React-Entwickler",
                 "Vue.js-Entwickler",
               ]}
-              speed={70}
+              speed={140}
               className="text-[#F9B233] font-bold"
               waitTime={1500}
               deleteSpeed={40}
@@ -49,9 +50,13 @@ const featuredProjects = (await getCollection('projekte'))
 
 
       </div>
+    </Container>
+  </section>
+  <Container size="xl">
+    <h2 class="text-center text-4xl font-bold">Sprachen, Frameworks etc.</h2>
       <div class="flex flex-col text-center py-12">
         <StackMarquee client:only="react" />
       </div>
-    </Container>
-  </section>
-</PageLayout>
+  </Container>
+
+</HomeLayout>
