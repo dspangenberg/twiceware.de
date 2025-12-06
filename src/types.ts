@@ -19,3 +19,8 @@ export type Socials = {
   TEXT: string
   HREF: string
 }[]
+
+export type BreadcrumbProp = {
+  title: string
+  href: string
+}

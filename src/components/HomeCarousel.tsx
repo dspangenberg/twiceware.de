@@ -86,8 +86,8 @@ export function HomeCarousel ({ projects }: Props) {
               key={index}
               type="button"
               onClick={() => api?.scrollTo(index)}
-              className={cn('h-3.5 w-3.5 rounded-full border-2 cursor-pointer border-black/20', {
-                '!border-blue-600': current === index
+              className={cn('h-3.5 w-3.5 rounded-full border-2 cursor-pointer border-stone-200', {
+                '!border-[#F9B233]': current === index
               })}
             />
           ))}

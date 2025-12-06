@@ -1,30 +1,76 @@
 ---
-import "@/styles/global.css"
-import BaseHead from "@/components/BaseHead.astro"
-import Header from "@/components/Header.astro"
-import Footer from "@/components/Footer.astro"
-import Drawer from "@/components/Drawer.astro"
-const { title, description, hideHeader } = Astro.props
-import { SITE } from "@/consts"
+import '@/styles/global.css'
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import Drawer from '@/components/Drawer.astro'
+import { SITE } from '@/consts'
 import Container from '@/components/Container.astro'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from '@/components/ui/breadcrumb'
+import type { BreadcrumbProp } from '@/types.ts'
+import { Home01Icon } from '@hugeicons/core-free-icons'
+const {
+  title,
+  description,
+  hideHeader,
+  breadcrumbs
+} = Astro.props
+import { Icon } from '@/components/ui/icon.tsx'
 
+type Props = {
+  title?: string
+  description?: string
+  image?: string
+  hideHeader?: boolean
+  breadcrumbs?: BreadcrumbProp[]
+}
 ---
 
 
 <!doctype html>
 <html lang="en">
 
-  <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
+<BaseHead title={`${title} | ${SITE.TITLE}`} description={description || ''} />
 
-  <body>
-    <Header />
-    <Drawer />
-    <main class="pt-36 pb-6">
-      <Container size="xl">
-        {!hideHeader && <h1 class="text-4xl font-bold mb-12">{title}</h1>}
-      <slot />
-      </Container>
-    </main>
-    <Footer />
-  </body>
+<body>
+<Header />
+<Drawer />
+<main class="pt-36 pb-6">
+  <Container size="xl">
+    {breadcrumbs &&
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">
+              <Icon icon={Home01Icon} className="size-4" />
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          {breadcrumbs.map((item: BreadcrumbProp, index: number) => (
+            <>
+              <BreadcrumbItem>
+                {item.href ? (
+                  <BreadcrumbLink href={item.href}>{item.title}</BreadcrumbLink>
+                ) : (
+                  <BreadcrumbPage>{item.title}</BreadcrumbPage>
+                )}
+              </BreadcrumbItem>
+              {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
+            </>
+          ))}
+        </BreadcrumbList>
+      </Breadcrumb>}
+    {!hideHeader && <h1 class="text-4xl font-bold mb-12">{title}</h1>}
+    <slot />
+  </Container>
+</main>
+<Footer />
+</body>
 </html>

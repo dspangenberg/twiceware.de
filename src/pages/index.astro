@@ -21,14 +21,36 @@ const featuredProjects = (await getCollection('projekte'))
   <section class="relative my-24 w-full  flex items-center justify-center bg-white">
     <Container size="xl">
 
-      <div class="flex  flex-col gap-24">
+      <div class="flex  flex-col space-y-24">
+
+        <div class="mx-auto md:text-4xl lg:text-5xl sm:text-3xl text-2xl flex flex-row items-start justify-start bg-background font-normal overflow-hidden">
+          <p class="whitespace-pre-wrap leading-normal text-center">
+            <span>Ich bin <b>Danny</b>,<br/> </span>
+            <Typewriter
+              client:only="react"
+              text={[
+                "Senior Webentwickler",
+                "Fullstack-Entwickler",
+                "Laravel-Entwickler",
+                "React-Entwickler",
+                "Vue.js-Entwickler",
+              ]}
+              speed={70}
+              className="text-[#F9B233] font-bold"
+              waitTime={1500}
+              deleteSpeed={40}
+              cursorChar={"_"}
+            /> <br/> aus <b>Bonn</b>.
+          </p>
+        </div>
+
 
        <HomeCarousel client:only="react" projects={featuredProjects} />
 
-        <div class="flex flex-col text-center">
-        <h1 class="text-2xl font-semibold">Sprachen, Frameworks und Kinks &#128586;</h1>
+
+      </div>
+      <div class="flex flex-col text-center py-12">
         <StackMarquee client:only="react" />
-        </div>
       </div>
     </Container>
   </section>

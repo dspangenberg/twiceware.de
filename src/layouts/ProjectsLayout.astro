@@ -29,7 +29,6 @@ const categories = [...new Set(allProjects.flatMap(project => project.data.categ
 const tags = [...new Set(allProjects.flatMap(project => project.data.tags || []))]
 ---
 <PageLayout title="Referenzen" description="Referenzen" hideHeader>
-
   <div class="flex gap-6 flex-wrap xl:flex-nowrap">
     <div class="flex-none w-64" transition:persist="sidebar">
       <div class="sticky top-56 space-y-6">
