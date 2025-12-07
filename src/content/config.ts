@@ -30,7 +30,7 @@ const projekte = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()),
     draft: z.boolean().optional(),
-    demoUrl: z.string().optional(),
+    website: z.string().optional(),
     repoUrl: z.string().optional(),
     extUrl: z.string().optional(),
     image: z.string().optional(),

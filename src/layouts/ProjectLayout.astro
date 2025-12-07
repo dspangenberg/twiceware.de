@@ -24,7 +24,7 @@ const {
   project,
   title
 } = Astro.props
-
+const { website, repoUrl } = project.data
 const breadcrumbs: BreadcrumbProp[] = [
   {
     title: 'Referenzen',
@@ -41,10 +41,34 @@ const breadcrumbs: BreadcrumbProp[] = [
   <div class="flex gap-6 flex-wrap xl:flex-nowrap">
     <div class="flex-1 animate">
       <div class="flex flex-col">
-        <article>
+        <article class="my-0">
           {project.data.summary && <p class="font-semibold">{project.data.summary}</p>}
         </article>
-        <img class="w-full border p-1 rounded-xl" src={image} alt={title} />
+        {image && <img class="w-full border p-1 rounded-xl mb-12" src={image} alt={title} />}
+        {(website || repoUrl) &&
+          <div class="mt-4 flex flex-wrap gap-2">
+            {website &&
+              <a href={website} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
+                <svg class="size-4">
+                  <use href="/ui.svg#globe" class="fill-current group-hover:fill-black blend"/>
+                </svg>
+                <span class="text-current group-hover:text-black blend">
+          Zur Website
+        </span>
+              </a>
+            }
+            {repoUrl &&
+              <a href={repoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
+                <svg class="size-4">
+                  <use href="/ui.svg#link" class="fill-current group-hover:fill-black blend"/>
+                </svg>
+                <span class="text-current group-hover:text-black blend">
+          Zur Repository
+        </span>
+              </a>
+            }
+          </div>
+        }
         <article>
           <slot />
         </article>

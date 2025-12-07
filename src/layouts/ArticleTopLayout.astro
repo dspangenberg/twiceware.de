@@ -11,8 +11,6 @@ const { entry } = Astro.props
 const { collection, data, body } = entry
 const { title, summary, date } = data
 
-const demoUrl = collection === "projekte" ? data.demoUrl : null
-const repoUrl = collection === "projekte" ? data.repoUrl : null
 ---
 
 <div>
@@ -42,28 +40,4 @@ const repoUrl = collection === "projekte" ? data.repoUrl : null
   <div class="mt-4 font-semibold">
     {summary}
   </div>
-  {(demoUrl || repoUrl) &&
-  <div class="mt-4 flex flex-wrap gap-2">
-    {demoUrl &&
-      <a href={demoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
-        <svg class="size-4">
-          <use href="/ui.svg#globe" class="fill-current group-hover:fill-black blend"/>
-        </svg>
-        <span class="text-current group-hover:text-black blend">
-          See Demo
-        </span>
-      </a>
-    }
-    {repoUrl &&
-      <a href={repoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
-        <svg class="size-4">
-          <use href="/ui.svg#link" class="fill-current group-hover:fill-black blend"/>
-        </svg>
-        <span class="text-current group-hover:text-black blend">
-          See Repository
-        </span>
-      </a>
-    }
-  </div>
-  }
 </div>
