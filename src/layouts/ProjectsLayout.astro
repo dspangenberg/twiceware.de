@@ -31,7 +31,7 @@ const tags = await getTagsForProjects()
 ---
 <PageLayout title="Referenzen" description="Referenzen" title={`Referenzen ${title ?? ''}`}>
   <div class="flex gap-12 flex-wrap xl:flex-nowrap flex-row-reverse ">
-    <div class="flex-none  lg:w-48" transition:persist="sidebar">
+    <div class="flex-none hidden lg:flex " transition:persist="sidebar">
       <div class="sticky top-56 space-y-6">
         <ul>
           <li>
