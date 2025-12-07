@@ -18,6 +18,10 @@ const {
   image,
   summary
 } = project.data
+
+const { Content } = await project.render();
 ---
-<ProjectLayout project={project} title={title} image={image} />
+<ProjectLayout project={project} title={title} image={image}>
+  <Content />
+</ProjectLayout>
 

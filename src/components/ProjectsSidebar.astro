@@ -1,0 +1,35 @@
+---
+import { getCategoriesForProjects, getTagsForProjects } from '@/lib/data.ts'
+
+const categories = await getCategoriesForProjects()
+const tags = await getTagsForProjects()
+---
+
+<div class="sticky top-56 space-y-6">
+  <ul>
+    <li>
+      <a href="/projekte/1">Alle Referenzen</a>
+    </li>
+  </ul>
+
+  <div class="text-sm font-semibold uppercase mb-2 text-black">Kategorien</div>
+  <ul>
+    {categories.map((category) => (
+      <li>
+        <a href={`/projekte/kategorie/${category}/1`}>
+          {category}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="text-sm font-semibold uppercase mb-2 text-black">Tags</div>
+  <ul>
+    {tags.map((tag) => (
+      <li>
+        <a href={`/projekte/tag/${tag}/1`}>
+          {tag}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

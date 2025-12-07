@@ -24,10 +24,10 @@ const {
   project,
   title
 } = Astro.props
-const { Content } = await project.render();
+
 const breadcrumbs: BreadcrumbProp[] = [
   {
-    title: 'Projekte',
+    title: 'Referenzen',
     href: '/projekte'
   },
   {
@@ -46,7 +46,7 @@ const breadcrumbs: BreadcrumbProp[] = [
         </article>
         <img class="w-full border p-1 rounded-xl" src={image} alt={title} />
         <article>
-          <Content />
+          <slot />
         </article>
       </div>
     </div>

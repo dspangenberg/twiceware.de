@@ -1,18 +1,15 @@
-import { formatDate } from '@/lib/utils'
 import type { CollectionEntry } from 'astro:content'
-
+import { sort  } from 'moderndash'
 type Props = {
   entry: CollectionEntry<'projekte'>
-  pill?: boolean
 }
 
 export default function ProjectCard ({
-  entry,
-  pill
+  entry
 }: Props) {
   const url = entry.data.extUrl ? entry.data.extUrl : `/projekte/${entry.slug}`
   const target = url.startsWith('http') ? '_blank' : '_self'
-
+  const tags = sort(entry.data.tags, { order: 'asc'})
   return (
     <a href={url} target={target}
        className="group  gap-3 flex items-center border border-stone-200 hover:bg-stone-50 hover:border-stone-300 rounded-lg transition-colors duration-300 ease-in-out"
@@ -26,7 +23,7 @@ export default function ProjectCard ({
           </div>
 
           <ul className="flex flex-wrap mt-2 gap-1">
-            {entry.data.tags.map((tag: string) => (
+            {tags.map((tag: string) => (
               <li key={tag} className="text-xs uppercase border border-stone-200 py-0.5 px-1.5 rounded-md bg-blue-50 text-black/75">
                 {tag}
               </li>
