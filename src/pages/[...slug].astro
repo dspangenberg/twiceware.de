@@ -21,17 +21,10 @@ type Props = CollectionEntry<"rechtliches"> | CollectionEntry<"pages">;
 const doc = Astro.props
 const { title } = doc.data
 const { Content } = await doc.render();
-
-const breadcrumbs: BreadcrumbProp[] = [
-  {
-    title: title,
-    href: ''
-  }
-]
 ---
 
-<PageLayout title={title} description={`${title} for ${SITE.TITLE}`} breadcrumbs={breadcrumbs}>
-    <article class="animate">
+<PageLayout title={title} description={`${title} for ${SITE.TITLE}`}>
+    <article>
       <Content />
     </article>
 </PageLayout>

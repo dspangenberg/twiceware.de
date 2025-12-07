@@ -12,6 +12,7 @@ import {
   PaginationLink,
 } from '@/components/ui/pagination'
 import { getProjects, getCategoriesForProjects, getTagsForProjects } from '@/lib/data.ts'
+import type { BreadcrumbProp } from '@/types.ts'
 type Props = {
   projects: CollectionEntry<'projekte'>[]
   page: Page<CollectionEntry<'projekte'>>
@@ -26,10 +27,11 @@ const {
 
 const categories = await getCategoriesForProjects()
 const tags = await getTagsForProjects()
+
 ---
-<PageLayout title="Referenzen" description="Referenzen" hideHeader>
-  <div class="flex gap-6 flex-wrap xl:flex-nowrap">
-    <div class="flex-none w-64" transition:persist="sidebar">
+<PageLayout title="Referenzen" description="Referenzen" title={`Referenzen ${title ?? ''}`}>
+  <div class="flex gap-12 flex-wrap xl:flex-nowrap flex-row-reverse ">
+    <div class="flex-none  lg:w-48" transition:persist="sidebar">
       <div class="sticky top-56 space-y-6">
         <ul>
           <li>
@@ -61,7 +63,6 @@ const tags = await getTagsForProjects()
     </div>
     <div class="flex-1 animate mb-12">
       <div class="flex flex-col">
-        <h1 class="text-4xl font-bold mb-12">Referenzen {title}</h1>
         <ul class="flex flex-col gap-y-12">
           {projects.map((project) => (
             <li>
