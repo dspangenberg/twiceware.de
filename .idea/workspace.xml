@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/layouts/ProjectsLayout.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BaseHead.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseHead.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/PageLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/PageLayout.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/[...slug].astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/projekte/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/[page].astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/kategorie/[category]/[page].astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/projekte/tag/[tag]/[page].astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/autokaufrecht.info/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/autokaufrecht.info/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/beleg-portal/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/dagnae-de/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/dagnae-de/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/elga-gmbh-de/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/elga-gmbh-de/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/projekte/matthias-gerschwitz-de/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/matthias-gerschwitz-de/index.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/ProjectLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ProjectLayout.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="Astro Component" />
         <option value="TypeScript JSX File" />
+        <option value="Astro Component" />
       </list>
     </option>
   </component>
@@ -60,26 +60,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/src/pages/projekte&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/dspangenberg/Projects/twiceware.cloud/twiceware.de/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -91,13 +91,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/pages/projekte" />
       <recent name="$PROJECT_DIR$/src/pages/projekte/category/[category]" />
       <recent name="$PROJECT_DIR$/src/content/projekte" />
-      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/content" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/content/projekte" />
       <recent name="$PROJECT_DIR$/src/content/pages" />
     </key>
@@ -143,6 +144,7 @@
       <workItem from="1764869221972" duration="29091000" />
       <workItem from="1764899911716" duration="463000" />
       <workItem from="1764900393608" duration="4708000" />
+      <workItem from="1765045803762" duration="51045000" />
     </task>
     <servers />
   </component>

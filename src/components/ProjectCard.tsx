@@ -16,15 +16,16 @@ export default function ProjectCard ({
     >
       <div className="w-full group-hover:text-black blend p-1">
         {entry.data.image && <img src={entry.data.image} className="w-full rounded-lg border aspect-[16/9] object-cover"  alt={entry.data.title} />}
-        <div className="p-4">
+        <div className="p-4 space-y-4">
 
-          <div className="font-semibold text-xl mt-3 text-black">
+          <h2 className="font-semibold !text-2xl mt-3 text-black">
             {entry.data.title}
-          </div>
+            {entry.data.extUrl && <span className=""> (externer Link)</span>}
+          </h2>
 
           <ul className="flex flex-wrap mt-2 gap-1">
             {tags.map((tag: string) => (
-              <li key={tag} className="text-xs uppercase border border-stone-200 py-0.5 px-1.5 rounded-md bg-blue-50 text-black/75">
+              <li key={tag} className="text-sm uppercase border border-stone-200 py-0.5 px-1.5 rounded-md bg-blue-50 text-black/75">
                 {tag}
               </li>
             ))}

@@ -1,16 +1,6 @@
 ---
 import PageLayout from '@/layouts/PageLayout.astro'
-import ProjectCard from '@/components/ProjectCard.tsx'
 import type { CollectionEntry } from 'astro:content'
-import type { Page } from 'astro'
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/components/ui/breadcrumb'
 import type { BreadcrumbProp } from '@/types.ts'
 
 type Props = {
@@ -39,11 +29,11 @@ const breadcrumbs: BreadcrumbProp[] = [
 <PageLayout title={title} description="Referenzen" breadcrumbs={breadcrumbs} >
 
   <div class="flex gap-6 flex-wrap xl:flex-nowrap">
-    <div class="flex-1 animate">
+    <div class="flex-1 animate space-y-6">
       <div class="flex flex-col">
-        <article class="my-0">
-          {project.data.summary && <p class="font-semibold">{project.data.summary}</p>}
-        </article>
+        {project.data.summary &&
+          <p class="font-semibold text-xl lg:text-2xl leading-normal my-6">{project.data.summary}</p>
+        }
         {image && <img class="w-full border p-1 rounded-xl mb-12" src={image} alt={title} />}
         {(website || repoUrl) &&
           <div class="mt-4 flex flex-wrap gap-2">
