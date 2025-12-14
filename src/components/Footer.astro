@@ -11,6 +11,8 @@ const projectsIndex = {
 }
 
 const allPages = [...pages, projectsIndex]
+const unamisiteToken = import.meta.env.UNAMI_SITE_TOKEN
+
 ---
 
 <footer class="relative bg-stone-50 border-t border-stone-100">
@@ -68,24 +70,4 @@ const allPages = [...pages, projectsIndex]
 
 </footer>
 
-<script is:inline defer src="https://umami.twiceware.cloud/script.js" data-website-id="97722d38-3f5b-4e84-9777-e64f8d004e0b"></script>
-
-<script is:inline>
-
-
-function goBackToTop(event) {
-    event.preventDefault()
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-  }
-
-  function inintializeBackToTop() {
-    const backToTop = document.getElementById("back-to-top")
-    backToTop?.addEventListener("click", goBackToTop)
-  }
-
-  document.addEventListener("astro:after-swap", inintializeBackToTop)
-  inintializeBackToTop()
-</script>
+<script is:inline defer src="https://umami.twiceware.cloud/script.js" data-website-id={unamisiteToken}></script>
