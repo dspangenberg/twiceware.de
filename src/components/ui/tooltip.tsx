@@ -1,62 +1,30 @@
-import type React from 'react'
-import {
-  Tooltip as AriaTooltip,
-  type TooltipProps as AriaTooltipProps,
-  composeRenderProps,
-  OverlayArrow,
-  TooltipTrigger
-} from 'react-aria-components'
-import { cva } from 'class-variance-authority'
-import { cn } from '@/lib/utils'
+import * as React from "react"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
-export interface TooltipProps extends Omit<AriaTooltipProps, 'children'> {
-  children: React.ReactNode
-}
+import { cn } from "@/lib/utils"
 
-const tooltipVariants = cva(
-  'group rounded-md bg-foreground px-3 pt-1.5 pt-1.5 pb-1 text-sm text-white will-change-transform',
-  {
-    variants: {
-      isEntering: {
-        true: 'fade-in animate-in duration-200'
-      },
-      isExiting: {
-        true: 'fade-out animate-out duration-150'
-      }
-    }
-  }
-)
+const TooltipProvider = TooltipPrimitive.Provider
 
-export function Tooltip({ children, ...props }: TooltipProps) {
-  return (
-    <AriaTooltip
-      {...props}
-      offset={8}
-      className={composeRenderProps(props.className, (className, renderProps) =>
-        cn(
-          tooltipVariants({
-            isEntering: renderProps.isEntering,
-            isExiting: renderProps.isExiting
-          }),
-          className
-        )
+const Tooltip = TooltipPrimitive.Root
+
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Portal>
+    <TooltipPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        "z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-tooltip-content-transform-origin]",
+        className
       )}
-    >
-      <OverlayArrow>
-        <svg
-          width={8}
-          height={8}
-          data-placement={props.placement}
-          viewBox="0 0 8 8"
-          className="data-[placement=left]:-rotate-90 fill-bg-foreground stroke-foreground data-[placement=bottom]:rotate-180 data-[placement=right]:rotate-90"
-        >
-          <title>Tooltip-Arrow</title>
-          <path d="M0 0 L4 4 L8 0" />
-        </svg>
-      </OverlayArrow>
-      {children}
-    </AriaTooltip>
-  )
-}
+      {...props}
+    />
+  </TooltipPrimitive.Portal>
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
 
-export { TooltipTrigger }
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

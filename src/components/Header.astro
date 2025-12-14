@@ -1,11 +1,9 @@
 ---
-import { SITE, LINKS } from '@/consts'
 import { cn } from '@/lib/utils'
 import Container from '@/components/Container.astro'
 import '@fontsource-variable/radio-canada'
 import '@fontsource-variable/jetbrains-mono'
 import Logo from './Logo.astro'
-import { getCollection } from 'astro:content'
 import { Menu03Icon, Cancel01Icon, GithubIcon  } from '@hugeicons/core-free-icons'
 import { Icon } from '@/components/ui/icon'
 
@@ -38,6 +36,7 @@ import { Icon } from '@/components/ui/icon'
         <a href="https://github.com/dspangenberg" target="_blank"   class={cn('flex ', 'size-10 rounded-full p-2 items-center justify-center', 'bg-transparent hover:bg-black/5', 'stroke-current hover:stroke-black', 'border-black/10', 'transition-colors duration-300 ease-in-out')}>
           <Icon icon={GithubIcon} className="size-full"/>
         </a>
+
       </div>
     </div>
   </Container>
