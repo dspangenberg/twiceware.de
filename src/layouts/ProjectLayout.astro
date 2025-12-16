@@ -2,6 +2,8 @@
 import PageLayout from '@/layouts/PageLayout.astro'
 import type { CollectionEntry } from 'astro:content'
 import type { BreadcrumbProp } from '@/types.ts'
+import { GithubIcon, GlobalIcon } from '@hugeicons/core-free-icons'
+import { Icon } from '@/components/ui/icon.tsx'
 
 type Props = {
   project: CollectionEntry<'projekte'>
@@ -37,23 +39,20 @@ const breadcrumbs: BreadcrumbProp[] = [
         {image && <img class="w-full border p-1 rounded-xl mb-12" src={image} alt={title} />}
         {(website || repoUrl) &&
           <div class="mt-4 flex flex-wrap gap-2">
-            {website &&
-              <a href={website} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
-                <svg class="size-4">
-                  <use href="/ui.svg#globe" class="fill-current group-hover:fill-black blend"/>
-                </svg>
+
+            {repoUrl &&
+              <a href={repoUrl} target="_blank" class="group inline-flex gap-2 items-center px-3 py-1.5 truncate rounded text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
+                <Icon icon={GithubIcon} className="size-5"/>
                 <span class="text-current group-hover:text-black blend">
-          Zur Website
-        </span>
+                  GitHub-Repository
+                </span>
               </a>
             }
-            {repoUrl &&
-              <a href={repoUrl} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
-                <svg class="size-4">
-                  <use href="/ui.svg#link" class="fill-current group-hover:fill-black blend"/>
-                </svg>
+            {website &&
+              <a href={website} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 hover:bg-black/5 blend">
+                <Icon icon={GlobalIcon} className="size-5"/>
                 <span class="text-current group-hover:text-black blend">
-          Zur Repository
+          Zur Website
         </span>
               </a>
             }
