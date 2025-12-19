@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/projekte/opsc-cloud/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/projekte/opsc-cloud/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/ProjectLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ProjectLayout.astro" afterDir="false" />
-    </list>
+    <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,6 +146,7 @@
       <workItem from="1765729362925" duration="4377000" />
       <workItem from="1765769095845" duration="1501000" />
       <workItem from="1765820506979" duration="833000" />
+      <workItem from="1765843352524" duration="3876000" />
     </task>
     <servers />
   </component>
