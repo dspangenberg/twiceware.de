@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content"
 import PageLayout from "@/layouts/PageLayout.astro"
+import TopLayout from "@/layouts/TopLayout.astro"
+import BottomLayout from "@/layouts/BottomLayout.astro"
 import Blog from "@/components/Blog"
 import { BLOG } from "@/consts"
 
@@ -13,7 +15,11 @@ const tags = [...new Set(posts.flatMap(post => post.data.tags))]
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
-  HI
+  <BottomLayout>
+    <div class="animate">
+      <Blog client:load tags={tags} data={posts} />
+    </div>
+  </BottomLayout>
 </PageLayout>
 
 
