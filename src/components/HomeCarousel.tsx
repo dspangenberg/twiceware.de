@@ -18,7 +18,7 @@ export function HomeCarousel ({ projects }: Props) {
   const getProject = (index: number) => projects[index]
   const getUrl = (index: number): string => {
     const project = getProject(index)
-    return project.data.extUrl || `/projekte/${project.slug}`
+    return project.data.extUrl || `/projekte/${project.id.replace(/\.[^.]+$/, '')}`
   }
   const getTarget = (index: number): string => {
     return getUrl(index)?.startsWith('http') ? '_blank' : '_self'

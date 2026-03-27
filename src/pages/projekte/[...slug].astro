@@ -1,12 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { type CollectionEntry, getCollection, render } from 'astro:content'
 import ProjectLayout from '@/layouts/ProjectLayout.astro'
 
 // Create the static projects pages
 export async function getStaticPaths () {
   const projects = await getCollection('projekte')
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id.replace(/\.[^.]+$/, '') },
     props: project
   }))
 }
@@ -19,9 +19,8 @@ const {
   summary
 } = project.data
 
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 <ProjectLayout project={project} title={title} image={image}>
   <Content />
 </ProjectLayout>
-

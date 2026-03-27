@@ -1,5 +1,4 @@
 ---
-import { SITE, LINKS } from '@/consts'
 import { cn } from '@/lib/utils'
 import { getCollection } from 'astro:content'
 const { pathname } = Astro.url
@@ -8,13 +7,9 @@ const subpath = pathname.match(/[^/]+/g)
 const pages = (await getCollection('pages'))
   .filter(page => !page.data.isFooterLink)
 
-const blogIndex = {
-  data: { title: 'Blog' },
-  slug: 'blog'
-}
 const projectsIndex = {
   data: { title: 'Referenzen' },
-  slug: 'projekte/1'
+  id: 'projekte/1'
 }
 
 const allContent = [...pages, projectsIndex]
@@ -23,7 +18,7 @@ const allContent = [...pages, projectsIndex]
 const currentPath = Astro.url.pathname
 
 const menuItems = allContent.map(item => {
-  const url = `/${item.slug}`
+  const url = `/${item.id.replace(/\.[^.]+$/, '')}`
   return {
     title: item.data.title,
     url: url,

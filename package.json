@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/mdx": "^4.3.14",
-    "@astrojs/react": "^4.4.2",
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/react": "^5.0.2",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
@@ -33,7 +33,7 @@
     "@tabler/icons-react": "^3.41.0",
     "@tabler/icons-sprite": "^3.41.0",
     "@tailwindcss/typography": "^0.5.19",
-    "astro": "5.17.1",
+    "astro": "6.1.1",
     "astro-breadcrumbs": "^3.4.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -62,6 +62,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "baseline-browser-mapping": "^2.10.11",
     "tailwindcss": "^4.2.2"
   }
 }
