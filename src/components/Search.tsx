@@ -12,7 +12,7 @@ export default function Search({data}: Props) {
   const [results, setResults] = useState<CollectionEntry<"blog">[]>([])
 
   const fuse = new Fuse(data, {
-    keys: ["slug", "data.title", "data.summary", "data.tags"],
+    keys: ["id", "data.title", "data.summary", "data.tags"],
     includeMatches: true,
     minMatchCharLength: 2,
     threshold: 0.4,
@@ -26,8 +26,8 @@ export default function Search({data}: Props) {
     }
   }, [query])
 
-  const onInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value)
+  const onInput: React.InputHTMLAttributes<HTMLInputElement>['onInput'] = (e) => {
+    setQuery((e.target as HTMLInputElement).value)
   }
 
   return (
@@ -45,7 +45,7 @@ export default function Search({data}: Props) {
           </div>
           <ul className="flex flex-col gap-3">
             {results.map(result => (
-              <li key={result.slug}>
+              <li key={result.id}>
                 <ArrowCard entry={result} pill={true} />
               </li>
             ))}

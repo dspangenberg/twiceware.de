@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed7ef56-b06c-4461-bd79-419da1922faa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/blog/01-von-vue-nach-react/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blog/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/blog/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/2026-01-08-1.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/2026-01-08-1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/2026-01-08.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/ArticleTopLayout.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +166,7 @@
       <workItem from="1767887208831" duration="1409000" />
       <workItem from="1768546840455" duration="24000" />
       <workItem from="1769814200563" duration="1067000" />
+      <workItem from="1774615356981" duration="419000" />
     </task>
     <servers />
   </component>

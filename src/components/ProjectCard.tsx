@@ -7,7 +7,7 @@ type Props = {
 export default function ProjectCard ({
   entry
 }: Props) {
-  const url = entry.data.extUrl ? entry.data.extUrl : `/projekte/${entry.slug}`
+  const url = entry.data.extUrl ? entry.data.extUrl : `/projekte/${entry.id.replace(/\.[^.]+$/, '')}`
   const target = url.startsWith('http') ? '_blank' : '_self'
   const tags = sort(entry.data.tags, { order: 'asc'})
   return (

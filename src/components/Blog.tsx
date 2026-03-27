@@ -58,7 +58,7 @@ export default function Blog({ data, tags }: Props) {
           </div>
           <ul className="flex flex-col gap-3">
             {posts.map((post) => (
-              <li key={post.slug}>
+              <li key={post.id}>
                 <ArrowCard entry={post} />
               </li>
             ))}
